@@ -156,6 +156,27 @@ section{padding:6rem 2rem}
 .modal-feat i{font-size:.68rem;color:#60a5fa;flex-shrink:0}
 .modal-actions{display:flex;gap:.75rem}
 
+/* AVANTAGES GRID */
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.adv-item{display:flex;flex-direction:column;gap:.75rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:background .15s}
+.adv-item:hover{background:var(--card-h)}
+.adv-icon{width:42px;height:42px;border-radius:10px;border:1px solid;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.adv-title{font-size:.9rem;font-weight:600;color:var(--frost)}
+.adv-desc{font-size:.8rem;color:var(--steel);line-height:1.65}
+
+/* CONFORMITE */
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.conf-list{display:flex;flex-direction:column;gap:.75rem}
+.conf-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.83rem;color:var(--steel);line-height:1.6}
+.conf-item i{font-size:.8rem;flex-shrink:0;margin-top:2px}
+.conf-item strong{color:var(--frost)}
+.conf-badges-wrap{display:flex;align-items:center;justify-content:center}
+.conf-badge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.conf-badge{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;transition:background .15s}
+.conf-badge:hover{background:var(--card-h)}
+.conf-badge i{font-size:1.4rem}
+.conf-badge span{font-size:.68rem;color:var(--steel);line-height:1.4}
+
 /* CTA BLOCK */
 .cta-block{background:linear-gradient(135deg,rgba(26,86,219,.12),rgba(26,86,219,.06));border:1px solid rgba(26,86,219,.2);border-radius:20px;padding:5rem 3rem;text-align:center}
 .cta-block h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.025em;margin-bottom:1rem}
@@ -174,8 +195,32 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
 .footer-badges{display:flex;gap:.5rem}
 .badge{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-size:.65rem;color:var(--mist)}
 
+/* APP PREVIEW MOCKUP */
+.app-preview{padding:1rem;background:#0d1117;display:flex;flex-direction:column;gap:.75rem}
+.ap-header{display:flex;align-items:center;justify-content:space-between;padding:.4rem .6rem;background:rgba(26,86,219,.15);border-radius:8px}
+.ap-nav{display:flex;gap:.25rem}
+.ap-nav-item{font-size:.6rem;padding:3px 8px;border-radius:5px;color:#94a3b8;cursor:default}
+.ap-nav-item.active{background:rgba(26,86,219,.3);color:#60a5fa;font-weight:600}
+.ap-user{width:22px;height:22px;border-radius:50%;background:#1a56db;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#fff}
+.ap-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.ap-kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.6rem;text-align:center}
+.ap-kpi-val{font-size:.88rem;font-weight:700;font-family:'DM Serif Display',serif;line-height:1}
+.ap-kpi-lbl{font-size:.55rem;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:.04em}
+.ap-chart{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:.75rem}
+.ap-chart-title{font-size:.6rem;color:#64748b;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.05em}
+.ap-bars{display:flex;align-items:flex-end;gap:6px;height:60px}
+.ap-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end}
+.ap-bar{width:100%;border-radius:3px 3px 0 0;opacity:.85}
+.ap-bar-label{font-size:.52rem;color:#475569}
+.ap-ops{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:.75rem;display:flex;flex-direction:column;gap:.4rem}
+.ap-ops-title{font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
+.ap-op{display:flex;align-items:center;gap:.5rem;font-size:.67rem}
+.ap-op-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ap-op-lib{flex:1;color:#94a3b8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ap-op-amt{font-weight:600;white-space:nowrap;font-size:.65rem}
+
 /* RESPONSIVE */
-@media(max-width:1024px){.modules-grid{grid-template-columns:1fr 1fr}.demo-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.modules-grid{grid-template-columns:1fr 1fr}.demo-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}.adv-grid{grid-template-columns:1fr 1fr}.conf-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.stats-inner{grid-template-columns:1fr 1fr}.stat-item{border-right:none;border-bottom:1px solid var(--border)}.stat-item:nth-child(odd){border-right:1px solid var(--border)}.modules-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}.nav-links{display:none}.nav-toggle{display:block}.cf-row{grid-template-columns:1fr}.modal-features{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.cta-block{padding:3rem 1.5rem}}
 </style>
 </head>
@@ -355,20 +400,120 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
           <div class="mockup-dot" style="background:#34d399"></div>
           <div class="mockup-url">app.protefinance.fr &mdash; Tableau de bord</div>
         </div>
-        <div class="mockup-screen">
-          <div class="mockup-mini-grid">
-            <div class="mockup-row wide"></div>
-            <div class="mockup-row wide"></div>
-            <div class="mockup-row wide"></div>
+        <div class="app-preview">
+          <!-- Header app -->
+          <div class="ap-header">
+            <div class="ap-nav">
+              <span class="ap-nav-item active">Pilotage</span>
+              <span class="ap-nav-item">Comptabilit&eacute;</span>
+              <span class="ap-nav-item">CDG</span>
+              <span class="ap-nav-item">GED</span>
+            </div>
+            <div class="ap-user">P</div>
           </div>
-          <div class="mockup-row tall"></div>
-          <div class="mockup-mini-grid">
-            <div class="mockup-row medium"></div>
-            <div class="mockup-row medium"></div>
-            <div class="mockup-row medium"></div>
+          <!-- KPI strip -->
+          <div class="ap-kpis">
+            <div class="ap-kpi">
+              <div class="ap-kpi-val" style="color:#34d399">2 456,80 &euro;</div>
+              <div class="ap-kpi-lbl">Solde v&eacute;rifi&eacute;</div>
+            </div>
+            <div class="ap-kpi">
+              <div class="ap-kpi-val" style="color:#60a5fa">94,2%</div>
+              <div class="ap-kpi-lbl">Taux pointage</div>
+            </div>
+            <div class="ap-kpi">
+              <div class="ap-kpi-val" style="color:#fbbf24">3</div>
+              <div class="ap-kpi-lbl">Alertes actives</div>
+            </div>
           </div>
-          <div class="mockup-row"></div>
-          <div class="mockup-row"></div>
+          <!-- Mini chart bars -->
+          <div class="ap-chart">
+            <div class="ap-chart-title">Flux mensuels &mdash; 2026</div>
+            <div class="ap-bars">
+              <div class="ap-bar-wrap"><div class="ap-bar" style="height:45%;background:#34d399"></div><div class="ap-bar-label">Jan</div></div>
+              <div class="ap-bar-wrap"><div class="ap-bar" style="height:65%;background:#34d399"></div><div class="ap-bar-label">F&eacute;v</div></div>
+              <div class="ap-bar-wrap"><div class="ap-bar" style="height:40%;background:#34d399"></div><div class="ap-bar-label">Mar</div></div>
+              <div class="ap-bar-wrap"><div class="ap-bar neg" style="height:30%;background:#ef4444"></div><div class="ap-bar-label">Avr</div></div>
+              <div class="ap-bar-wrap"><div class="ap-bar" style="height:70%;background:#34d399"></div><div class="ap-bar-label">Mai</div></div>
+              <div class="ap-bar-wrap"><div class="ap-bar" style="height:55%;background:#34d399"></div><div class="ap-bar-label">Jun</div></div>
+            </div>
+          </div>
+          <!-- Dernières ops -->
+          <div class="ap-ops">
+            <div class="ap-ops-title">Derni&egrave;res op&eacute;rations</div>
+            <div class="ap-op"><span class="ap-op-dot" style="background:#34d399"></span><span class="ap-op-lib">Pension retraite CARSAT</span><span class="ap-op-amt" style="color:#34d399">+1 245,00 &euro;</span></div>
+            <div class="ap-op"><span class="ap-op-dot" style="background:#ef4444"></span><span class="ap-op-lib">Loyer r&eacute;sidence</span><span class="ap-op-amt" style="color:#ef4444">-780,00 &euro;</span></div>
+            <div class="ap-op"><span class="ap-op-dot" style="background:#ef4444"></span><span class="ap-op-lib">Mutuelle sant&eacute;</span><span class="ap-op-amt" style="color:#ef4444">-42,50 &euro;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES AVANCÉES -->
+<section style="background:var(--surface)">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Pourquoi Prot&eacute;Finance</div>
+    <h2 class="section-title">Con&ccedil;u pour les professionnels MJPM</h2>
+    <div class="adv-grid">
+      <div class="adv-item">
+        <div class="adv-icon" style="color:#60a5fa;background:rgba(26,86,219,.12);border-color:rgba(26,86,219,.25)"><i class="fa fa-bolt"></i></div>
+        <div class="adv-title">Import automatis&eacute;</div>
+        <div class="adv-desc">Import direct des relev&eacute;s OFX, CSV et PDF des principales banques. Z&eacute;ro saisie manuelle.</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon" style="color:#34d399;background:rgba(5,150,105,.1);border-color:rgba(5,150,105,.25)"><i class="fa fa-shield-halved"></i></div>
+        <div class="adv-title">S&eacute;curit&eacute; maximale</div>
+        <div class="adv-desc">Donn&eacute;es chiffr&eacute;es AES-256, acc&egrave;s HTTPS, sauvegardes quotidiennes automatis&eacute;es.</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon" style="color:#a78bfa;background:rgba(124,58,237,.12);border-color:rgba(124,58,237,.25)"><i class="fa fa-users"></i></div>
+        <div class="adv-title">Multi-utilisateurs</div>
+        <div class="adv-desc">Cr&eacute;ez des comptes collaborateurs avec r&ocirc;les et permissions par dossier et organisation.</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon" style="color:#fbbf24;background:rgba(217,119,6,.1);border-color:rgba(217,119,6,.25)"><i class="fa fa-bell"></i></div>
+        <div class="adv-title">Alertes intelligentes</div>
+        <div class="adv-desc">Notifications automatiques pour les &eacute;ch&eacute;ances CDG, renouvellements et obligations l&eacute;gales.</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon" style="color:#f472b6;background:rgba(236,72,153,.1);border-color:rgba(236,72,153,.25)"><i class="fa fa-mobile-alt"></i></div>
+        <div class="adv-title">Accessible partout</div>
+        <div class="adv-desc">Application responsive et installable sur mobile (PWA). Acc&egrave;s depuis n&apos;importe quel appareil.</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon" style="color:#22d3ee;background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.25)"><i class="fa fa-rotate"></i></div>
+        <div class="adv-title">Mises &agrave; jour continues</div>
+        <div class="adv-desc">Nouvelles fonctionnalit&eacute;s et mises en conformit&eacute; r&eacute;glementaire incluses sans surco&ucirc;t.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFORMITE -->
+<section>
+  <div class="section-wrap">
+    <div class="conf-grid">
+      <div>
+        <div class="section-eyebrow">Conformit&eacute;</div>
+        <h2 class="section-title">Respect total du cadre l&eacute;gal MJPM</h2>
+        <p class="section-sub">Prot&eacute;Finance est con&ccedil;u en adh&eacute;rence stricte avec les obligations des mandataires judiciaires &agrave; la protection des majeurs.</p>
+        <div class="conf-list">
+          <div class="conf-item"><i class="fa fa-check-circle" style="color:#34d399"></i><div><strong>Loi du 5 mars 2007</strong> &mdash; Mod&egrave;les conformes aux r&eacute;formes de la protection des majeurs</div></div>
+          <div class="conf-item"><i class="fa fa-check-circle" style="color:#34d399"></i><div><strong>D&eacute;cret MJPM</strong> &mdash; CDG et bilan de travail aux formats officiels</div></div>
+          <div class="conf-item"><i class="fa fa-check-circle" style="color:#34d399"></i><div><strong>RGPD</strong> &mdash; Donn&eacute;es personnelles prot&eacute;g&eacute;es, droit &agrave; l&apos;oubli</div></div>
+          <div class="conf-item"><i class="fa fa-check-circle" style="color:#34d399"></i><div><strong>Greffe du tribunal</strong> &mdash; PDF directement acceptables par les juges</div></div>
+        </div>
+      </div>
+      <div class="conf-badges-wrap">
+        <div class="conf-badge-grid">
+          <div class="conf-badge"><i class="fa fa-gavel" style="color:#a78bfa"></i><span>Conforme<br>tribunal</span></div>
+          <div class="conf-badge"><i class="fa fa-lock" style="color:#60a5fa"></i><span>RGPD<br>certifi&eacute;</span></div>
+          <div class="conf-badge"><i class="fa fa-shield-halved" style="color:#34d399"></i><span>Donn&eacute;es<br>chiffr&eacute;es</span></div>
+          <div class="conf-badge"><i class="fa fa-file-lines" style="color:#fbbf24"></i><span>CDG<br>officiel</span></div>
+          <div class="conf-badge"><i class="fa fa-users" style="color:#f472b6"></i><span>MJPM<br>d&eacute;di&eacute;</span></div>
+          <div class="conf-badge"><i class="fa fa-rotate" style="color:#22d3ee"></i><span>Mis &agrave; jour<br>r&eacute;guli&egrave;rement</span></div>
         </div>
       </div>
     </div>
