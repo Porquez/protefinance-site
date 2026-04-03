@@ -195,7 +195,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
       <a href="#contact">Contact</a>
       <a href="https://app.protefinance.fr" class="nav-cta">Acc&eacute;der &rarr;</a>
     </div>
-    <button class="nav-toggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
+    <button class="nav-toggle" data-action="menu"><i class="fa fa-bars"></i></button>
   </div>
 </nav>
 
@@ -207,7 +207,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
   <h1>La gestion financi&egrave;re<br>des tutelles <em>simplifi&eacute;e</em></h1>
   <p class="hero-desc">Comptabilit&eacute;, patrimoine, CDG, GED et pilotage 360&deg; r&eacute;unis dans un espace s&eacute;curis&eacute; d&eacute;di&eacute; aux mandataires judiciaires &agrave; la protection des majeurs.</p>
   <div class="hero-actions">
-    <button class="btn-primary" onclick="openDemoModal()">
+    <button class="btn-primary" data-action="demo">
       <i class="fa fa-calendar-check"></i> Demander une d&eacute;monstration
     </button>
     <a href="https://app.protefinance.fr" class="btn-ghost">
@@ -240,7 +240,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
     <p class="section-sub">Une suite compl&egrave;te pens&eacute;e pour les mandataires judiciaires professionnels. Cliquez sur un module pour en savoir plus.</p>
     <div class="modules-grid">
 
-      <div class="mod-card" style="--mod-color:#60a5fa" onclick="openModule('compta')">
+      <div class="mod-card" style="--mod-color:#60a5fa" data-action="module" data-id="compta">
         <div class="mod-icon"><i class="fa fa-calculator"></i></div>
         <div class="mod-title">Comptabilit&eacute;</div>
         <div class="mod-desc">Op&eacute;rations, relev&eacute;s, pointage et rapprochement bancaire automatis&eacute;.</div>
@@ -253,7 +253,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
         <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
       </div>
 
-      <div class="mod-card" style="--mod-color:#a78bfa" onclick="openModule('cdg')">
+      <div class="mod-card" style="--mod-color:#a78bfa" data-action="module" data-id="cdg">
         <div class="mod-icon"><i class="fa fa-file-lines"></i></div>
         <div class="mod-title">CDG &amp; Greffe</div>
         <div class="mod-desc">Compte de gestion annuel et bilan de travail conformes aux exigences judiciaires.</div>
@@ -266,7 +266,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
         <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
       </div>
 
-      <div class="mod-card" style="--mod-color:#34d399" onclick="openModule('patrimoine')">
+      <div class="mod-card" style="--mod-color:#34d399" data-action="module" data-id="patrimoine">
         <div class="mod-icon"><i class="fa fa-building-columns"></i></div>
         <div class="mod-title">Patrimoine</div>
         <div class="mod-desc">Inventaires, biens immobiliers, actes et suivi des autorisations judiciaires.</div>
@@ -279,7 +279,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
         <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
       </div>
 
-      <div class="mod-card" style="--mod-color:#fbbf24" onclick="openModule('ged')">
+      <div class="mod-card" style="--mod-color:#fbbf24" data-action="module" data-id="ged">
         <div class="mod-icon"><i class="fa fa-folder-open"></i></div>
         <div class="mod-title">GED int&eacute;gr&eacute;e</div>
         <div class="mod-desc">Gestion documentaire, pi&egrave;ces justificatives et archivage s&eacute;curis&eacute;.</div>
@@ -292,7 +292,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
         <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
       </div>
 
-      <div class="mod-card" style="--mod-color:#f472b6" onclick="openModule('courriers')">
+      <div class="mod-card" style="--mod-color:#f472b6" data-action="module" data-id="courriers">
         <div class="mod-icon"><i class="fa fa-envelope"></i></div>
         <div class="mod-title">Courriers &amp; Publipostage</div>
         <div class="mod-desc">Mod&egrave;les MJPM, g&eacute;n&eacute;ration automatique et publipostage en masse.</div>
@@ -305,7 +305,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
         <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
       </div>
 
-      <div class="mod-card" style="--mod-color:#22d3ee" onclick="openModule('pilotage')">
+      <div class="mod-card" style="--mod-color:#22d3ee" data-action="module" data-id="pilotage">
         <div class="mod-icon"><i class="fa fa-chart-line"></i></div>
         <div class="mod-title">Pilotage 360&deg;</div>
         <div class="mod-desc">Cockpit KPI, alertes temps r&eacute;el et conformit&eacute; des obligations l&eacute;gales.</div>
@@ -344,7 +344,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
             <div><div class="demo-step-title">Acc&egrave;s pilot</div><div class="demo-step-desc">Essai sur votre propre structure pendant 30 jours.</div></div>
           </div>
         </div>
-        <button class="btn-primary" onclick="openDemoModal()">
+        <button class="btn-primary" data-action="demo">
           <i class="fa fa-calendar-check"></i> Demander une d&eacute;mo gratuite
         </button>
       </div>
@@ -411,42 +411,42 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
     <h2 class="section-title">Questions fr&eacute;quentes</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" data-action="faq">
           Prot&eacute;Finance est-il conforme aux exigences du greffe ?
           <i class="fa fa-chevron-down"></i>
         </button>
         <div class="faq-a">Oui. Le module CDG g&eacute;n&egrave;re des PDF conformes aux mod&egrave;les officiels exig&eacute;s par les tribunaux. Les formats sont mis &agrave; jour r&eacute;guli&egrave;rement.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" data-action="faq">
           Mes donn&eacute;es sont-elles s&eacute;curis&eacute;es ?
           <i class="fa fa-chevron-down"></i>
         </button>
         <div class="faq-a">Toutes les donn&eacute;es sont chiffr&eacute;es au repos et en transit (TLS). L&apos;application respecte le RGPD. Les sauvegardes sont automatis&eacute;es quotidiennement.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" data-action="faq">
           Est-il possible d&apos;importer mes donn&eacute;es existantes ?
           <i class="fa fa-chevron-down"></i>
         </button>
         <div class="faq-a">Oui. Prot&eacute;Finance accepte les imports OFX, CSV et PDF pour les relev&eacute;s bancaires. Une proc&eacute;dure de migration assist&eacute;e est disponible sur demande.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" data-action="faq">
           Peut-on travailler &agrave; plusieurs sur un m&ecirc;me dossier ?
           <i class="fa fa-chevron-down"></i>
         </button>
         <div class="faq-a">Oui. Le syst&egrave;me de gestion multi-utilisateurs permet de cr&eacute;er des comptes collaborateurs avec des r&ocirc;les et permissions distincts par organisation et par dossier.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" data-action="faq">
           Y a-t-il un module mobile ?
           <i class="fa fa-chevron-down"></i>
         </button>
         <div class="faq-a">L&apos;application est optimis&eacute;e pour mobile et tablette via le navigateur. Une version PWA (installable sur l&apos;&eacute;cran d&apos;accueil Android/iOS) est &eacute;galement disponible.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" data-action="faq">
           Quel est le co&ucirc;t de la solution ?
           <i class="fa fa-chevron-down"></i>
         </button>
@@ -533,7 +533,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
       <h2>Pr&ecirc;t &agrave; d&eacute;marrer ?</h2>
       <p>Rejoignez les mandataires judiciaires qui font confiance &agrave; Prot&eacute;Finance pour g&eacute;rer leurs dossiers avec pr&eacute;cision et s&eacute;r&eacute;nit&eacute;.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <button class="btn-primary" onclick="openDemoModal()">
+        <button class="btn-primary" data-action="demo">
           <i class="fa fa-calendar-check"></i> D&eacute;mo gratuite
         </button>
         <a href="https://app.protefinance.fr" class="btn-ghost">
@@ -586,9 +586,9 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
 </footer>
 
 <!-- MODAL DEMO -->
-<div class="modal-overlay" id="demo-modal" onclick="closeDemoModal(event)">
+<div class="modal-overlay" id="demo-modal" id="demo-modal-overlay">
   <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('demo-modal').classList.remove('open')"><i class="fa fa-times"></i></button>
+    <button class="modal-close" data-action="close-demo"><i class="fa fa-times"></i></button>
     <div class="modal-icon" style="background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);color:#60a5fa">
       <i class="fa fa-calendar-check"></i>
     </div>
@@ -637,48 +637,105 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
 </div>
 
 <!-- MODALS MODULES -->
-<div class="modal-overlay" id="module-modal" onclick="closeModuleModal(event)">
+<div class="modal-overlay" id="module-modal" id="module-modal-overlay">
   <div class="modal-box" id="module-modal-content"></div>
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
 var modules={
-  compta:{color:'#60a5fa',bg:'rgba(26,86,219,.15)',border:'rgba(26,86,219,.3)',icon:'fa-calculator',title:'Comptabilit&eacute;',sub:'Gestion compl&egrave;te des op&eacute;rations financi&egrave;res de vos dossiers de protection. Import automatis&eacute; des relev&eacute;s bancaires, pointage et rapprochement en quelques clics.',feats:['Import OFX, CSV, PDF','R&egrave;gles de ventilation automatiques','Rapprochement bancaire','Tableaux de bord financi&egrave;rs','Export Excel et comptable','Suivi multi-comptes']},
+  compta:{color:'#60a5fa',bg:'rgba(26,86,219,.15)',border:'rgba(26,86,219,.3)',icon:'fa-calculator',title:'Comptabilit&eacute;',sub:'Gestion compl&egrave;te des op&eacute;rations financi&egrave;res de vos dossiers de protection. Import automatis&eacute; des relev&eacute;s bancaires, pointage et rapprochement en quelques clics.',feats:['Import OFX, CSV, PDF','R&egrave;gles de ventilation automatiques','Rapprochement bancaire','Tableaux de bord financiers','Export Excel et comptable','Suivi multi-comptes']},
   cdg:{color:'#a78bfa',bg:'rgba(124,58,237,.15)',border:'rgba(124,58,237,.3)',icon:'fa-file-lines',title:'CDG &amp; Greffe',sub:'G&eacute;n&eacute;ration automatis&eacute;e du compte de gestion annuel et du bilan de travail, conformes aux exigences des tribunaux judiciaires.',feats:['PDF conforme greffe','Tableau de bord CDG','Suivi des d&eacute;lais','Validation multi-niveau','Historique annuel','Export et envoi direct']},
   patrimoine:{color:'#34d399',bg:'rgba(5,150,105,.12)',border:'rgba(5,150,105,.3)',icon:'fa-building-columns',title:'Patrimoine',sub:'Gestion compl&egrave;te du patrimoine de la personne prot&eacute;g&eacute;e. Inventaires, biens, actes et suivi des autorisations judiciaires.',feats:['Inventaires d&eacute;taill&eacute;s','Biens immobiliers &amp; mobiliers','Actes patrimoniaux','Autorisations judiciaires','Alertes &eacute;ch&eacute;ances','Rapport patrimoine']},
-  ged:{color:'#fbbf24',bg:'rgba(217,119,6,.12)',border:'rgba(217,119,6,.3)',icon:'fa-folder-open',title:'GED int&eacute;gr&eacute;e',sub:'Gestion documentaire centralis&eacute;e pour tous vos dossiers. Classement automatique, conformit&eacute; PJ et acc&egrave;s s&eacute;curis&eacute; depuis n&apos;importe o&ugrave;.',feats:['Classement automatique','Conformit&eacute; PJ contr&ocirc;l&eacute;e','Recherche plein texte','Historique versionn&eacute;','Partage s&eacute;curis&eacute;','Archivage l&eacute;gal']},
+  ged:{color:'#fbbf24',bg:'rgba(217,119,6,.12)',border:'rgba(217,119,6,.3)',icon:'fa-folder-open',title:'GED int&eacute;gr&eacute;e',sub:'Gestion documentaire centralis&eacute;e pour tous vos dossiers. Classement automatique, conformit&eacute; PJ et acc&egrave;s s&eacute;curis&eacute; depuis n'importe o&ugrave;.',feats:['Classement automatique','Conformit&eacute; PJ contr&ocirc;l&eacute;e','Recherche plein texte','Historique versionn&eacute;','Partage s&eacute;curis&eacute;','Archivage l&eacute;gal']},
   courriers:{color:'#f472b6',bg:'rgba(236,72,153,.12)',border:'rgba(236,72,153,.3)',icon:'fa-envelope',title:'Courriers &amp; Publipostage',sub:'Biblioth&egrave;que de mod&egrave;les MJPM, g&eacute;n&eacute;ration automatique personnalis&eacute;e et publipostage en masse avec suivi des envois.',feats:['Mod&egrave;les MJPM officiels','G&eacute;n&eacute;ration automatique','Publipostage en masse','Suivi des envois','Archivage GED auto','Historique courriers']},
   pilotage:{color:'#22d3ee',bg:'rgba(6,182,212,.12)',border:'rgba(6,182,212,.3)',icon:'fa-chart-line',title:'Pilotage 360&deg;',sub:'Tableau de bord KPI en temps r&eacute;el, alertes intelligentes et frise r&eacute;glementaire pour ne jamais manquer une &eacute;ch&eacute;ance.',feats:['Cockpit KPI','Alertes temps r&eacute;el','Frise r&eacute;glementaire','Conformit&eacute; obligations','Rapports automatis&eacute;s','Vue multi-dossiers']}
 };
 
 function openModule(id){
   var m=modules[id];
+  if(!m) return;
   var feats=m.feats.map(function(f){return '<div class="modal-feat"><i class="fa fa-check-circle" style="color:'+m.color+'"></i>'+f+'</div>';}).join('');
   document.getElementById('module-modal-content').innerHTML=
-    '<button class="modal-close" onclick="document.getElementById(\'module-modal\').classList.remove(\'open\')"><i class="fa fa-times"></i></button>'+
+    '<button class="modal-close" data-action="close-module"><i class="fa fa-times"></i></button>'+
     '<div class="modal-icon" style="background:'+m.bg+';border:1px solid '+m.border+';color:'+m.color+'"><i class="fa '+m.icon+'"></i></div>'+
     '<h3 class="modal-title">'+m.title+'</h3>'+
     '<p class="modal-sub">'+m.sub+'</p>'+
     '<div class="modal-features">'+feats+'</div>'+
     '<div class="modal-actions">'+
-    '<button class="btn-primary" onclick="document.getElementById(\'module-modal\').classList.remove(\'open\');openDemoModal()"><i class="fa fa-calendar-check"></i> Demander une d&eacute;mo</button>'+
+    '<button class="btn-primary" data-action="demo-from-module"><i class="fa fa-calendar-check"></i> Demander une d&eacute;mo</button>'+
     '<a href="https://app.protefinance.fr" class="btn-ghost"><i class="fa fa-arrow-right-to-bracket"></i> Essayer</a>'+
     '</div>';
   document.getElementById('module-modal').classList.add('open');
 }
-function closeModuleModal(e){if(e.target===document.getElementById('module-modal'))document.getElementById('module-modal').classList.remove('open')}
-function openDemoModal(){document.getElementById('demo-modal').classList.add('open')}
-function closeDemoModal(e){if(e.target===document.getElementById('demo-modal'))document.getElementById('demo-modal').classList.remove('open')}
-function toggleFaq(btn){var item=btn.parentElement;item.classList.toggle('open')}
-function toggleMenu(){var l=document.querySelector('.nav-links');l.style.display=l.style.display==='flex'?'none':'flex'}
-function submitForm(e){
-  e.preventDefault();
-  var form=e.target;
-  fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-  .then(function(r){if(r.ok){form.reset();document.getElementById('cf-success').style.display='block'}})
-  .catch(function(){document.getElementById('cf-success').style.display='block'});
+
+function openDemoModal(){
+  document.getElementById('demo-modal').classList.add('open');
 }
-function submitDemoForm(e){
-  e.preventDefault();
-  var form=e.target;
-  fetch(form.action,{method:'POST',body:new FormData(form),headers
+
+function closeDemoModal(){
+  document.getElementById('demo-modal').classList.remove('open');
+}
+
+function closeModuleModal(){
+  document.getElementById('module-modal').classList.remove('open');
+}
+
+// Event delegation - gere tous les clics
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-action]');
+  if(!t) return;
+  var a = t.getAttribute('data-action');
+  if(a==='demo') openDemoModal();
+  if(a==='close-demo') closeDemoModal();
+  if(a==='close-module') closeModuleModal();
+  if(a==='demo-from-module'){ closeModuleModal(); openDemoModal(); }
+  if(a==='module'){ openModule(t.getAttribute('data-id')); }
+  if(a==='faq'){
+    var item=t.parentElement;
+    item.classList.toggle('open');
+  }
+  if(a==='menu'){
+    var nl=document.querySelector('.nav-links');
+    nl.style.display=nl.style.display==='flex'?'none':'flex';
+  }
+});
+
+// Fermer modals sur click overlay
+document.getElementById('demo-modal').addEventListener('click', function(e){
+  if(e.target===this) closeDemoModal();
+});
+document.getElementById('module-modal').addEventListener('click', function(e){
+  if(e.target===this) closeModuleModal();
+});
+
+// Formulaire contact
+var cfContact = document.querySelector('[data-form="contact"]');
+if(cfContact){
+  cfContact.closest('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form=this;
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+    .then(function(r){
+      if(r.ok){form.reset();document.getElementById('cf-success').style.display='block';}
+    }).catch(function(){document.getElementById('cf-success').style.display='block';});
+  });
+}
+
+// Formulaire demo
+var cfDemo = document.querySelector('[data-form="demo"]');
+if(cfDemo){
+  cfDemo.closest('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form=this;
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+    .then(function(r){
+      if(r.ok){form.reset();document.getElementById('demo-success').style.display='block';}
+    }).catch(function(){document.getElementById('demo-success').style.display='block';});
+  });
+}
+
+})();
+</script>
+</body>
+</html>
