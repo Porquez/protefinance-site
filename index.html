@@ -480,7 +480,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
         </div>
       </div>
       <div>
-        <form class="cf-form" action="https://formspree.io/f/xvzvwwln" method="POST" onsubmit="submitForm(event)">
+        <form class="cf-form" action="https://formspree.io/f/xvzvwwln" method="POST" data-form="contact">
           <div class="cf-row">
             <div class="cf-group">
               <label class="cf-label">Pr&eacute;nom *</label>
@@ -586,7 +586,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
 </footer>
 
 <!-- MODAL DEMO -->
-<div class="modal-overlay" id="demo-modal" id="demo-modal-overlay">
+<div class="modal-overlay" id="demo-modal">
   <div class="modal-box">
     <button class="modal-close" data-action="close-demo"><i class="fa fa-times"></i></button>
     <div class="modal-icon" style="background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);color:#60a5fa">
@@ -594,7 +594,7 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
     </div>
     <h3 class="modal-title">Demande de d&eacute;monstration</h3>
     <p class="modal-sub">Remplissez ce formulaire et nous vous contacterons sous 24h pour planifier votre d&eacute;mo personnalis&eacute;e gratuite.</p>
-    <form class="cf-form" action="https://formspree.io/f/xvzvwwln" method="POST" onsubmit="submitDemoForm(event)">
+    <form class="cf-form" action="https://formspree.io/f/xvzvwwln" method="POST" data-form="demo">
       <div class="cf-row">
         <div class="cf-group">
           <label class="cf-label">Pr&eacute;nom *</label>
@@ -637,11 +637,11 @@ footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem
 </div>
 
 <!-- MODALS MODULES -->
-<div class="modal-overlay" id="module-modal" id="module-modal-overlay">
+<div class="modal-overlay" id="module-modal">
   <div class="modal-box" id="module-modal-content"></div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
 (function(){
 var modules={
   compta:{color:'#60a5fa',bg:'rgba(26,86,219,.15)',border:'rgba(26,86,219,.3)',icon:'fa-calculator',title:'Comptabilit&eacute;',sub:'Gestion compl&egrave;te des op&eacute;rations financi&egrave;res de vos dossiers de protection. Import automatis&eacute; des relev&eacute;s bancaires, pointage et rapprochement en quelques clics.',feats:['Import OFX, CSV, PDF','R&egrave;gles de ventilation automatiques','Rapprochement bancaire','Tableaux de bord financiers','Export Excel et comptable','Suivi multi-comptes']},
