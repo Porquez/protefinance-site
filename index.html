@@ -1,266 +1,690 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Prot&eacute;Finance &mdash; Suite logicielle d&eacute;di&eacute;e aux Mandataires Judiciaires &agrave; la Protection des Majeurs. Comptabilit&eacute;, CDG, GED, patrimoine et pilotage 360&deg;.">
-  <title>Prot&eacute;Finance &mdash; Suite logicielle MJPM</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #0d1117; --blue: #1a56db; --blue-d: #1341b0;
-    --steel: #94a3b8; --mist: #64748b; --frost: #e2e8f0;
-    --border: rgba(255,255,255,.08);
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--ink);
-    color: #fff; -webkit-font-smoothing: antialiased; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prot&eacute;Finance &mdash; Suite logicielle MJPM. Comptabilit&eacute;, CDG, GED, patrimoine et pilotage 360&deg; pour mandataires judiciaires.">
+<title>Prot&eacute;Finance &mdash; Suite logicielle MJPM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d1117;--surface:#0f1520;--card:#ffffff08;--card-h:#ffffff0d;
+  --blue:#1a56db;--blue-d:#1341b0;--blue-l:#3b82f6;
+  --steel:#94a3b8;--mist:#64748b;--frost:#e2e8f0;
+  --ok:#059669;--warn:#d97706;--border:#ffffff10;--radius:14px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--ink);color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-  /* &#9472;&#9472; Nav &#9472;&#9472; */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(13,17,23,.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: .75rem 2rem;
-  }
-  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-  .nav-brand strong { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-  .nav-brand span { font-size: .75rem; color: var(--steel); }
-  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-  .nav-links a { font-size: .85rem; color: var(--steel); text-decoration: none; transition: color .15s; }
-  .nav-links a:hover { color: #fff; }
-  .nav-cta { background: var(--blue); color: #fff; padding: 7px 18px; border-radius: 8px;
-    font-size: .85rem; font-weight: 500; text-decoration: none; transition: background .15s; }
-  .nav-cta:hover { background: var(--blue-d); color: #fff; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,17,23,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:all .3s}
+.nav-inner{max-width:1200px;margin:0 auto;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex-shrink:0}
+.nav-brand strong{font-family:'DM Serif Display',serif;font-size:1.2rem}
+.nav-brand span{font-size:.72rem;color:var(--steel)}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{font-size:.83rem;color:var(--steel);text-decoration:none;transition:color .15s;white-space:nowrap}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--blue);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:500;font-size:.83rem;transition:background .15s!important}
+.nav-cta:hover{background:var(--blue-d)!important}
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer}
 
-  /* &#9472;&#9472; Hero &#9472;&#9472; */
-  .hero {
-    min-height: 92vh; display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center; padding: 4rem 2rem 3rem;
-    position: relative; overflow: hidden;
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(26,86,219,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(26,86,219,.05) 1px, transparent 1px);
-    background-size: 40px 40px; pointer-events: none;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%);
-  }
-  .hero-glow {
-    position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none;
-    width: 600px; height: 600px; top: -200px; left: 50%; transform: translateX(-50%);
-    background: radial-gradient(circle, rgba(26,86,219,.18) 0%, transparent 70%);
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 7px;
-    font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--blue); background: rgba(26,86,219,.12); border: 1px solid rgba(26,86,219,.3);
-    padding: 5px 16px; border-radius: 20px; margin-bottom: 1.75rem;
-  }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--blue); animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
-  .hero h1 { font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -.03em;
-    margin-bottom: 1.5rem; position: relative; z-index: 1; }
-  .hero h1 em { font-style: italic; color: #60a5fa; }
-  .hero-desc { font-size: 1.1rem; color: var(--steel); line-height: 1.75;
-    max-width: 600px; margin-bottom: 2.5rem; position: relative; z-index: 1; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    position: relative; z-index: 1; margin-bottom: 3rem; }
-  .btn-primary { background: var(--blue); color: #fff; padding: 12px 28px;
-    border-radius: 10px; font-size: .95rem; font-weight: 600; text-decoration: none;
-    transition: background .15s, transform .1s; }
-  .btn-primary:hover { background: var(--blue-d); transform: translateY(-1px); }
-  .btn-ghost { background: transparent; color: var(--frost); padding: 12px 28px;
-    border-radius: 10px; border: 1px solid var(--border); font-size: .95rem;
-    text-decoration: none; transition: background .15s; }
-  .btn-ghost:hover { background: rgba(255,255,255,.06); }
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(26,86,219,.15) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,86,219,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,86,219,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,black 20%,transparent 100%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:rgba(26,86,219,.1);border:1px solid rgba(26,86,219,.3);padding:5px 16px;border-radius:20px;margin-bottom:1.75rem;position:relative;z-index:1}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,5.5vw,5rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;position:relative;z-index:1}
+.hero h1 em{font-style:italic;color:#60a5fa}
+.hero-desc{font-size:1.1rem;color:var(--steel);line-height:1.8;max-width:620px;margin-bottom:2.5rem;position:relative;z-index:1}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin-bottom:4rem}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:13px 28px;border-radius:10px;font-size:.93rem;font-weight:600;text-decoration:none;transition:background .15s,transform .1s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--blue-d);transform:translateY(-1px);color:#fff}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--frost);padding:13px 28px;border-radius:10px;border:1px solid var(--border);font-size:.93rem;text-decoration:none;transition:background .15s;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.hero-trust{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--mist)}
+.trust-item i{color:var(--ok);font-size:.7rem}
 
-  /* &#9472;&#9472; Features &#9472;&#9472; */
-  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: .72rem; font-weight: 600; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--blue); margin-bottom: .75rem; }
-  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem);
-    letter-spacing: -.025em; margin-bottom: 1rem; }
-  .section-sub { font-size: .95rem; color: var(--steel); line-height: 1.75; max-width: 560px; margin-bottom: 3rem; }
+/* STATS */
+.stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.8rem;color:#60a5fa;letter-spacing:-.02em;line-height:1}
+.stat-label{font-size:.72rem;color:var(--mist);margin-top:.4rem;text-transform:uppercase;letter-spacing:.07em}
 
-  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
-  .feat-card { background: rgba(255,255,255,.03); border: 1px solid var(--border);
-    border-radius: 14px; padding: 1.5rem; transition: background .15s, border-color .15s; }
-  .feat-card:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
-  .feat-icon { width: 40px; height: 40px; border-radius: 10px; border: 1px solid;
-    display: flex; align-items: center; justify-content: center; font-size: .95rem;
-    margin-bottom: 1rem; }
-  .feat-title { font-size: .95rem; font-weight: 600; margin-bottom: .4rem; }
-  .feat-desc { font-size: .82rem; color: var(--steel); line-height: 1.6; }
+/* SECTION GENERIC */
+section{padding:6rem 2rem}
+.section-wrap{max-width:1200px;margin:0 auto}
+.section-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);letter-spacing:-.025em;margin-bottom:1rem;line-height:1.15}
+.section-sub{font-size:.95rem;color:var(--steel);line-height:1.8;max-width:560px;margin-bottom:3.5rem}
 
-  /* &#9472;&#9472; Stats &#9472;&#9472; */
-  .stats-row { display: flex; gap: 0; background: rgba(255,255,255,.03);
-    border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-  .stat { flex: 1; padding: 2rem; text-align: center; }
-  .stat + .stat { border-left: 1px solid var(--border); }
-  .stat-val { font-family: 'DM Serif Display', serif; font-size: 2.5rem;
-    color: #60a5fa; letter-spacing: -.02em; line-height: 1; }
-  .stat-lbl { font-size: .78rem; color: var(--mist); margin-top: .4rem;
-    text-transform: uppercase; letter-spacing: .07em; }
+/* MODULES */
+.modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.mod-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;position:relative;overflow:hidden}
+.mod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mod-color,var(--blue));opacity:0;transition:opacity .15s}
+.mod-card:hover{background:var(--card-h);border-color:rgba(255,255,255,.15);transform:translateY(-2px)}
+.mod-card:hover::before{opacity:1}
+.mod-icon{width:44px;height:44px;border-radius:10px;border:1px solid var(--mod-color,var(--blue));background:color-mix(in srgb,var(--mod-color,var(--blue)) 15%,transparent);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--mod-color,#60a5fa);margin-bottom:1.25rem}
+.mod-title{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--frost)}
+.mod-desc{font-size:.82rem;color:var(--steel);line-height:1.65;margin-bottom:1.25rem}
+.mod-features{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:1.25rem}
+.mod-features li{font-size:.76rem;color:var(--steel);display:flex;align-items:center;gap:6px}
+.mod-features li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--mod-color,var(--blue));flex-shrink:0}
+.mod-cta{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:500;color:var(--mod-color,#60a5fa);text-decoration:none;background:none;border:none;cursor:pointer;padding:0;font-family:'DM Sans',sans-serif;transition:gap .15s}
+.mod-cta:hover{gap:10px}
 
-  /* &#9472;&#9472; CTA finale &#9472;&#9472; */
-  .cta-block {
-    background: rgba(26,86,219,.08); border: 1px solid rgba(26,86,219,.2);
-    border-radius: 20px; padding: 4rem 3rem; text-align: center;
-  }
-  .cta-block h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem;
-    letter-spacing: -.025em; margin-bottom: 1rem; }
-  .cta-block p { color: var(--steel); font-size: .95rem; margin-bottom: 2rem; }
+/* DEMO SECTION */
+.demo-section{background:var(--surface)}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.demo-content .section-sub{margin-bottom:2rem}
+.demo-steps{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.demo-step{display:flex;align-items:flex-start;gap:1rem;padding:1rem;background:var(--card);border:1px solid var(--border);border-radius:10px}
+.demo-step-num{width:32px;height:32px;border-radius:8px;background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);color:#60a5fa;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.demo-step-title{font-size:.85rem;font-weight:600;color:var(--frost);margin-bottom:2px}
+.demo-step-desc{font-size:.75rem;color:var(--steel)}
+.demo-mockup{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.mockup-bar{background:rgba(255,255,255,.05);padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border)}
+.mockup-dot{width:10px;height:10px;border-radius:50%}
+.mockup-url{background:rgba(255,255,255,.06);border-radius:4px;padding:3px 10px;font-size:.68rem;color:var(--mist);margin-left:.5rem;flex:1}
+.mockup-screen{padding:1.5rem;display:grid;gap:.6rem}
+.mockup-row{background:rgba(255,255,255,.04);border-radius:6px;height:36px}
+.mockup-row.tall{height:80px}
+.mockup-row.medium{height:56px}
+.mockup-row.wide{background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.2)}
+.mockup-mini-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem}
 
-  /* &#9472;&#9472; Footer &#9472;&#9472; */
-  footer { border-top: 1px solid var(--border); padding: 2rem;
-    text-align: center; font-size: .78rem; color: var(--mist); }
-  footer a { color: var(--mist); text-decoration: none; }
-  footer a:hover { color: var(--steel); }
-  .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: .75rem; }
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
+.testi-stars{color:#fbbf24;font-size:.8rem;margin-bottom:.75rem}
+.testi-text{font-size:.85rem;color:var(--steel);line-height:1.7;margin-bottom:1rem;font-style:italic}
+.testi-author{font-size:.78rem;font-weight:600;color:var(--frost)}
+.testi-role{font-size:.72rem;color:var(--mist)}
 
-  @media (max-width: 640px) {
-    nav { padding: .75rem 1rem; }
-    .nav-links { display: none; }
-    .stats-row { flex-direction: column; }
-    .stat + .stat { border-left: none; border-top: 1px solid var(--border); }
-    .cta-block { padding: 2.5rem 1.5rem; }
-  }
-  </style>
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:.75rem;max-width:760px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.25rem;background:none;border:none;color:#fff;font-size:.9rem;font-weight:500;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif}
+.faq-q i{color:var(--mist);transition:transform .2s;flex-shrink:0}
+.faq-a{display:none;padding:0 1.25rem 1.1rem;font-size:.83rem;color:var(--steel);line-height:1.75}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-item.open .faq-a{display:block}
+
+/* CONTACT */
+.contact-section{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-icon{width:40px;height:40px;border-radius:10px;background:rgba(26,86,219,.12);border:1px solid rgba(26,86,219,.2);display:flex;align-items:center;justify-content:center;color:#60a5fa;font-size:.85rem;flex-shrink:0}
+.contact-label{font-size:.72rem;color:var(--mist);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.contact-val{font-size:.88rem;color:var(--frost)}
+.contact-val a{color:#60a5fa;text-decoration:none}
+.cf-form{display:flex;flex-direction:column;gap:1rem}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cf-group{display:flex;flex-direction:column;gap:.4rem}
+.cf-label{font-size:.75rem;font-weight:500;color:var(--frost);letter-spacing:.02em}
+.cf-input,.cf-select,.cf-textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem;font-family:'DM Sans',sans-serif;font-size:.88rem;color:#fff;outline:none;transition:border-color .15s,box-shadow .15s;width:100%}
+.cf-input:focus,.cf-select:focus,.cf-textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.2)}
+.cf-input::placeholder,.cf-textarea::placeholder{color:var(--mist)}
+.cf-select{appearance:none;cursor:pointer}
+.cf-select option{background:#1a2233;color:#fff}
+.cf-textarea{resize:vertical;min-height:110px}
+.cf-submit{background:var(--blue);color:#fff;border:none;border-radius:10px;padding:.85rem;font-family:'DM Sans',sans-serif;font-size:.93rem;font-weight:600;cursor:pointer;transition:background .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.cf-submit:hover{background:var(--blue-d)}
+.cf-success{display:none;background:rgba(5,150,105,.12);border:1px solid rgba(5,150,105,.3);color:#34d399;border-radius:8px;padding:1rem;font-size:.85rem;text-align:center}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:#0f1520;border:1px solid var(--border);border-radius:20px;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;padding:2.5rem;position:relative;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;background:rgba(255,255,255,.08);border:none;color:var(--steel);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.modal-close:hover{background:rgba(255,255,255,.15);color:#fff}
+.modal-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.25rem}
+.modal-title{font-family:'DM Serif Display',serif;font-size:1.6rem;letter-spacing:-.025em;margin-bottom:.5rem}
+.modal-sub{font-size:.85rem;color:var(--steel);margin-bottom:1.75rem;line-height:1.65}
+.modal-features{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.75rem}
+.modal-feat{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--steel);background:var(--card);border:1px solid var(--border);border-radius:7px;padding:.5rem .75rem}
+.modal-feat i{font-size:.68rem;color:#60a5fa;flex-shrink:0}
+.modal-actions{display:flex;gap:.75rem}
+
+/* CTA BLOCK */
+.cta-block{background:linear-gradient(135deg,rgba(26,86,219,.12),rgba(26,86,219,.06));border:1px solid rgba(26,86,219,.2);border-radius:20px;padding:5rem 3rem;text-align:center}
+.cta-block h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.025em;margin-bottom:1rem}
+.cta-block p{color:var(--steel);font-size:.95rem;margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* FOOTER */
+footer{background:#070b11;border-top:1px solid var(--border);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand strong{font-family:'DM Serif Display',serif;font-size:1.3rem}
+.footer-brand p{font-size:.78rem;color:var(--mist);margin-top:.5rem;line-height:1.65;max-width:260px}
+.footer-col h4{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mist);margin-bottom:1rem}
+.footer-col a{display:block;font-size:.82rem;color:var(--mist);text-decoration:none;margin-bottom:.5rem;transition:color .15s}
+.footer-col a:hover{color:var(--steel)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.75rem;color:var(--mist)}
+.footer-badges{display:flex;gap:.5rem}
+.badge{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-size:.65rem;color:var(--mist)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.modules-grid{grid-template-columns:1fr 1fr}.demo-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.stats-inner{grid-template-columns:1fr 1fr}.stat-item{border-right:none;border-bottom:1px solid var(--border)}.stat-item:nth-child(odd){border-right:1px solid var(--border)}.modules-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}.nav-links{display:none}.nav-toggle{display:block}.cf-row{grid-template-columns:1fr}.modal-features{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.cta-block{padding:3rem 1.5rem}}
+</style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="/" class="nav-brand">
-    <strong>Prot&eacute;Finance</strong>
-    <span>Suite MJPM</span>
-  </a>
-  <div class="nav-links">
-    <a href="#modules">Modules</a>
-    <a href="#contact">Contact</a>
-    <a href="https://app.protefinance.fr" class="nav-cta">Acc&eacute;der &agrave; l'application &#8594;</a>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <strong>Prot&eacute;Finance</strong>
+      <span>Suite MJPM</span>
+    </a>
+    <div class="nav-links">
+      <a href="#modules">Modules</a>
+      <a href="#demo">D&eacute;mo</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://app.protefinance.fr" class="nav-cta">Acc&eacute;der &rarr;</a>
+    </div>
+    <button class="nav-toggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
   <div class="hero-badge">Plateforme certifi&eacute;e MJPM</div>
   <h1>La gestion financi&egrave;re<br>des tutelles <em>simplifi&eacute;e</em></h1>
-  <p class="hero-desc">
-    Comptabilit&eacute;, patrimoine, CDG, GED et pilotage 360&deg; r&eacute;unis
-    dans un espace s&eacute;curis&eacute; d&eacute;di&eacute; aux mandataires judiciaires &agrave; la protection des majeurs.
-  </p>
+  <p class="hero-desc">Comptabilit&eacute;, patrimoine, CDG, GED et pilotage 360&deg; r&eacute;unis dans un espace s&eacute;curis&eacute; d&eacute;di&eacute; aux mandataires judiciaires &agrave; la protection des majeurs.</p>
   <div class="hero-actions">
-    <a href="https://app.protefinance.fr" class="btn-primary">
+    <button class="btn-primary" onclick="openDemoModal()">
+      <i class="fa fa-calendar-check"></i> Demander une d&eacute;monstration
+    </button>
+    <a href="https://app.protefinance.fr" class="btn-ghost">
       <i class="fa fa-arrow-right-to-bracket"></i> Acc&eacute;der &agrave; l'application
     </a>
-    <a href="#modules" class="btn-ghost">D&eacute;couvrir les modules</a>
+  </div>
+  <div class="hero-trust">
+    <span class="trust-item"><i class="fa fa-check-circle"></i> Conforme greffe</span>
+    <span class="trust-item"><i class="fa fa-check-circle"></i> RGPD</span>
+    <span class="trust-item"><i class="fa fa-check-circle"></i> Donn&eacute;es chiffr&eacute;es</span>
+    <span class="trust-item"><i class="fa fa-check-circle"></i> Support inclus</span>
   </div>
 </div>
 
 <!-- STATS -->
-<section>
-  <div class="stats-row">
-    <div class="stat">
-      <div class="stat-val">360&deg;</div>
-      <div class="stat-lbl">Pilotage int&eacute;gr&eacute;</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">100%</div>
-      <div class="stat-lbl">Conforme greffe</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">MJPM</div>
-      <div class="stat-lbl">Certifi&eacute; mandataires</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">RGPD</div>
-      <div class="stat-lbl">Donn&eacute;es prot&eacute;g&eacute;es</div>
+<div class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">360&deg;</div><div class="stat-label">Pilotage int&eacute;gr&eacute;</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Conforme greffe</div></div>
+    <div class="stat-item"><div class="stat-num">MJPM</div><div class="stat-label">Certifi&eacute; mandataires</div></div>
+    <div class="stat-item"><div class="stat-num">RGPD</div><div class="stat-label">Donn&eacute;es prot&eacute;g&eacute;es</div></div>
+  </div>
+</div>
+
+<!-- MODULES -->
+<section id="modules">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Modules</div>
+    <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+    <p class="section-sub">Une suite compl&egrave;te pens&eacute;e pour les mandataires judiciaires professionnels. Cliquez sur un module pour en savoir plus.</p>
+    <div class="modules-grid">
+
+      <div class="mod-card" style="--mod-color:#60a5fa" onclick="openModule('compta')">
+        <div class="mod-icon"><i class="fa fa-calculator"></i></div>
+        <div class="mod-title">Comptabilit&eacute;</div>
+        <div class="mod-desc">Op&eacute;rations, relev&eacute;s, pointage et rapprochement bancaire automatis&eacute;.</div>
+        <ul class="mod-features">
+          <li>Import OFX, CSV, PDF</li>
+          <li>R&egrave;gles de ventilation auto</li>
+          <li>Rapprochement bancaire</li>
+          <li>Export Excel / comptable</li>
+        </ul>
+        <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
+      </div>
+
+      <div class="mod-card" style="--mod-color:#a78bfa" onclick="openModule('cdg')">
+        <div class="mod-icon"><i class="fa fa-file-lines"></i></div>
+        <div class="mod-title">CDG &amp; Greffe</div>
+        <div class="mod-desc">Compte de gestion annuel et bilan de travail conformes aux exigences judiciaires.</div>
+        <ul class="mod-features">
+          <li>G&eacute;n&eacute;ration PDF automatique</li>
+          <li>Tableau de bord CDG</li>
+          <li>Suivi des d&eacute;lais greffe</li>
+          <li>Validation multi-niveau</li>
+        </ul>
+        <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
+      </div>
+
+      <div class="mod-card" style="--mod-color:#34d399" onclick="openModule('patrimoine')">
+        <div class="mod-icon"><i class="fa fa-building-columns"></i></div>
+        <div class="mod-title">Patrimoine</div>
+        <div class="mod-desc">Inventaires, biens immobiliers, actes et suivi des autorisations judiciaires.</div>
+        <ul class="mod-features">
+          <li>Inventaires d&eacute;taill&eacute;s</li>
+          <li>Biens immobiliers &amp; mobiliers</li>
+          <li>Autorisations judiciaires</li>
+          <li>Alertes &eacute;ch&eacute;ances</li>
+        </ul>
+        <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
+      </div>
+
+      <div class="mod-card" style="--mod-color:#fbbf24" onclick="openModule('ged')">
+        <div class="mod-icon"><i class="fa fa-folder-open"></i></div>
+        <div class="mod-title">GED int&eacute;gr&eacute;e</div>
+        <div class="mod-desc">Gestion documentaire, pi&egrave;ces justificatives et archivage s&eacute;curis&eacute;.</div>
+        <ul class="mod-features">
+          <li>Classement automatique</li>
+          <li>Conformit&eacute; PJ</li>
+          <li>Recherche plein texte</li>
+          <li>Historique versionn&eacute;</li>
+        </ul>
+        <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
+      </div>
+
+      <div class="mod-card" style="--mod-color:#f472b6" onclick="openModule('courriers')">
+        <div class="mod-icon"><i class="fa fa-envelope"></i></div>
+        <div class="mod-title">Courriers &amp; Publipostage</div>
+        <div class="mod-desc">Mod&egrave;les MJPM, g&eacute;n&eacute;ration automatique et publipostage en masse.</div>
+        <ul class="mod-features">
+          <li>Biblioth&egrave;que mod&egrave;les MJPM</li>
+          <li>Publipostage en masse</li>
+          <li>Suivi des envois</li>
+          <li>Archivage GED auto</li>
+        </ul>
+        <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
+      </div>
+
+      <div class="mod-card" style="--mod-color:#22d3ee" onclick="openModule('pilotage')">
+        <div class="mod-icon"><i class="fa fa-chart-line"></i></div>
+        <div class="mod-title">Pilotage 360&deg;</div>
+        <div class="mod-desc">Cockpit KPI, alertes temps r&eacute;el et conformit&eacute; des obligations l&eacute;gales.</div>
+        <ul class="mod-features">
+          <li>Tableau de bord KPI</li>
+          <li>Alertes temps r&eacute;el</li>
+          <li>Frise r&eacute;glementaire</li>
+          <li>Rapports de conformit&eacute;</li>
+        </ul>
+        <button class="mod-cta">En savoir plus <i class="fa fa-arrow-right"></i></button>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- MODULES -->
-<section id="modules">
-  <div class="section-label">Modules</div>
-  <h2 class="section-title">Tout ce dont vous avez besoin</h2>
-  <p class="section-sub">Une suite compl&egrave;te pens&eacute;e pour les mandataires judiciaires professionnels.</p>
+<!-- DEMO -->
+<section id="demo" class="demo-section">
+  <div class="section-wrap">
+    <div class="demo-grid">
+      <div class="demo-content">
+        <div class="section-eyebrow">D&eacute;monstration</div>
+        <h2 class="section-title">Voyez Prot&eacute;Finance en action</h2>
+        <p class="section-sub">D&eacute;couvrez comment Prot&eacute;Finance simplifie votre quotidien de mandataire judiciaire en 30 minutes chrono.</p>
+        <div class="demo-steps">
+          <div class="demo-step">
+            <div class="demo-step-num">1</div>
+            <div><div class="demo-step-title">Prise de contact</div><div class="demo-step-desc">Remplissez le formulaire, nous vous recontactons sous 24h.</div></div>
+          </div>
+          <div class="demo-step">
+            <div class="demo-step-num">2</div>
+            <div><div class="demo-step-title">D&eacute;mo personnalis&eacute;e</div><div class="demo-step-desc">Session de 30 min sur vos cas d&apos;usage sp&eacute;cifiques.</div></div>
+          </div>
+          <div class="demo-step">
+            <div class="demo-step-num">3</div>
+            <div><div class="demo-step-title">Acc&egrave;s pilot</div><div class="demo-step-desc">Essai sur votre propre structure pendant 30 jours.</div></div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="openDemoModal()">
+          <i class="fa fa-calendar-check"></i> Demander une d&eacute;mo gratuite
+        </button>
+      </div>
+      <div class="demo-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot" style="background:#ef4444"></div>
+          <div class="mockup-dot" style="background:#fbbf24"></div>
+          <div class="mockup-dot" style="background:#34d399"></div>
+          <div class="mockup-url">app.protefinance.fr &mdash; Tableau de bord</div>
+        </div>
+        <div class="mockup-screen">
+          <div class="mockup-mini-grid">
+            <div class="mockup-row wide"></div>
+            <div class="mockup-row wide"></div>
+            <div class="mockup-row wide"></div>
+          </div>
+          <div class="mockup-row tall"></div>
+          <div class="mockup-mini-grid">
+            <div class="mockup-row medium"></div>
+            <div class="mockup-row medium"></div>
+            <div class="mockup-row medium"></div>
+          </div>
+          <div class="mockup-row"></div>
+          <div class="mockup-row"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="features-grid">
-    <div class="feat-card">
-      <div class="feat-icon" style="background:rgba(26,86,219,.15);border-color:rgba(26,86,219,.3);color:#60a5fa">
-        <i class="fa fa-calculator"></i>
+<!-- TESTIMONIALS -->
+<section>
+  <div class="section-wrap">
+    <div class="section-eyebrow">T&eacute;moignages</div>
+    <h2 class="section-title">Ils utilisent Prot&eacute;Finance</h2>
+    <p class="section-sub">Retours d&apos;exp&eacute;rience de mandataires judiciaires professionnels.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+        <p class="testi-text">&laquo;&nbsp;Le CDG automatique m&apos;a fait gagner plusieurs jours par an. Le PDF g&eacute;n&eacute;r&eacute; est directement accept&eacute; par le greffe.&nbsp;&raquo;</p>
+        <div class="testi-author">Marie D.</div>
+        <div class="testi-role">Mandataire judiciaire ind&eacute;pendant &mdash; Amiens</div>
       </div>
-      <div class="feat-title">Comptabilit&eacute;</div>
-      <div class="feat-desc">Op&eacute;rations, relev&eacute;s, pointage et rapprochement bancaire. R&egrave;gles de ventilation automatiques, export Excel.</div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+        <p class="testi-text">&laquo;&nbsp;La GED int&eacute;gr&eacute;e et le module courriers ont transform&eacute; notre organisation. Tout est centralis&eacute;, rien ne se perd.&nbsp;&raquo;</p>
+        <div class="testi-author">Pierre V.</div>
+        <div class="testi-role">Responsable service tutelles &mdash; Association MJPM</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></div>
+        <p class="testi-text">&laquo;&nbsp;Le rapprochement bancaire automatis&eacute; et les alertes en temps r&eacute;el me permettent de ne rien oublier. Tr&egrave;s professionnel.&nbsp;&raquo;</p>
+        <div class="testi-author">Sophie M.</div>
+        <div class="testi-role">MJPM ind&eacute;pendant &mdash; Paris</div>
+      </div>
     </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:rgba(124,58,237,.15);border-color:rgba(124,58,237,.3);color:#a78bfa">
-        <i class="fa fa-file-lines"></i>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--surface)">
+  <div class="section-wrap">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-title">Questions fr&eacute;quentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Prot&eacute;Finance est-il conforme aux exigences du greffe ?
+          <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Oui. Le module CDG g&eacute;n&egrave;re des PDF conformes aux mod&egrave;les officiels exig&eacute;s par les tribunaux. Les formats sont mis &agrave; jour r&eacute;guli&egrave;rement.</div>
       </div>
-      <div class="feat-title">CDG & Greffe</div>
-      <div class="feat-desc">Compte de gestion annuel, bilan de travail, g&eacute;n&eacute;ration PDF conforme aux exigences du tribunal.</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Mes donn&eacute;es sont-elles s&eacute;curis&eacute;es ?
+          <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Toutes les donn&eacute;es sont chiffr&eacute;es au repos et en transit (TLS). L&apos;application respecte le RGPD. Les sauvegardes sont automatis&eacute;es quotidiennement.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Est-il possible d&apos;importer mes donn&eacute;es existantes ?
+          <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Oui. Prot&eacute;Finance accepte les imports OFX, CSV et PDF pour les relev&eacute;s bancaires. Une proc&eacute;dure de migration assist&eacute;e est disponible sur demande.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Peut-on travailler &agrave; plusieurs sur un m&ecirc;me dossier ?
+          <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Oui. Le syst&egrave;me de gestion multi-utilisateurs permet de cr&eacute;er des comptes collaborateurs avec des r&ocirc;les et permissions distincts par organisation et par dossier.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Y a-t-il un module mobile ?
+          <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">L&apos;application est optimis&eacute;e pour mobile et tablette via le navigateur. Une version PWA (installable sur l&apos;&eacute;cran d&apos;accueil Android/iOS) est &eacute;galement disponible.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Quel est le co&ucirc;t de la solution ?
+          <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">Contactez-nous via le formulaire ci-dessous pour obtenir un devis adapt&eacute; &agrave; votre structure. Une p&eacute;riode d&apos;essai gratuite de 30 jours est propos&eacute;e.</div>
+      </div>
     </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:rgba(5,150,105,.12);border-color:rgba(5,150,105,.3);color:#34d399">
-        <i class="fa fa-building-columns"></i>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-title">Parlons de votre projet</h2>
+        <p class="section-sub" style="margin-bottom:2.5rem">Notre &eacute;quipe est disponible pour r&eacute;pondre &agrave; vos questions et vous accompagner.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+            <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-globe"></i></div>
+            <div><div class="contact-label">Site web</div><div class="contact-val"><a href="https://www.protefinance.fr">www.protefinance.fr</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-clock"></i></div>
+            <div><div class="contact-label">R&eacute;ponse</div><div class="contact-val">Sous 24h ouvrables</div></div>
+          </div>
+        </div>
       </div>
-      <div class="feat-title">Patrimoine</div>
-      <div class="feat-desc">Inventaires, biens immobiliers, actes patrimoniaux et suivi des autorisations judiciaires.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:rgba(217,119,6,.12);border-color:rgba(217,119,6,.3);color:#fbbf24">
-        <i class="fa fa-folder-open"></i>
+      <div>
+        <form class="cf-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" onsubmit="submitForm(event)">
+          <div class="cf-row">
+            <div class="cf-group">
+              <label class="cf-label">Pr&eacute;nom *</label>
+              <input class="cf-input" type="text" name="prenom" placeholder="Jean" required>
+            </div>
+            <div class="cf-group">
+              <label class="cf-label">Nom *</label>
+              <input class="cf-input" type="text" name="nom" placeholder="Dupont" required>
+            </div>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Email professionnel *</label>
+            <input class="cf-input" type="email" name="email" placeholder="jean.dupont@exemple.fr" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Structure</label>
+            <input class="cf-input" type="text" name="structure" placeholder="Association, cabinet...">
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Objet</label>
+            <select class="cf-select" name="objet">
+              <option value="">S&eacute;lectionner...</option>
+              <option value="demo">Demande de d&eacute;monstration</option>
+              <option value="info">Demande d&apos;information</option>
+              <option value="tarif">Demande de tarif</option>
+              <option value="support">Support technique</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Message *</label>
+            <textarea class="cf-textarea" name="message" placeholder="D&eacute;crivez votre besoin..." required></textarea>
+          </div>
+          <button type="submit" class="cf-submit">
+            <i class="fa fa-paper-plane"></i> Envoyer le message
+          </button>
+          <div class="cf-success" id="cf-success">
+            <i class="fa fa-check-circle"></i> Message envoy&eacute; ! Nous vous recontactons sous 24h.
+          </div>
+        </form>
       </div>
-      <div class="feat-title">GED int&eacute;gr&eacute;e</div>
-      <div class="feat-desc">Gestion documentaire, pi&egrave;ces justificatives, archivage et contr&ocirc;le de conformit&eacute; PJ.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:rgba(236,72,153,.12);border-color:rgba(236,72,153,.3);color:#f472b6">
-        <i class="fa fa-envelope"></i>
-      </div>
-      <div class="feat-title">Courriers & Publipostage</div>
-      <div class="feat-desc">Mod&egrave;les MJPM, g&eacute;n&eacute;ration automatique de courriers, publipostage en masse et suivi des envois.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon" style="background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.3);color:#22d3ee">
-        <i class="fa fa-chart-line"></i>
-      </div>
-      <div class="feat-title">Pilotage 360&deg;</div>
-      <div class="feat-desc">Cockpit KPI, alertes temps r&eacute;el, frise r&eacute;glementaire et conformit&eacute; des obligations l&eacute;gales.</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section>
-  <div class="cta-block">
-    <h2>Pr&ecirc;t &agrave; d&eacute;marrer ?</h2>
-    <p>Acc&eacute;dez &agrave; votre espace Prot&eacute;Finance ou contactez-nous pour en savoir plus.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="https://app.protefinance.fr" class="btn-primary">
-        <i class="fa fa-arrow-right-to-bracket"></i> Acc&eacute;der &agrave; l'application
-      </a>
-      <a href="/cdn-cgi/l/email-protection#95f6fafbe1f4f6e1d5e5e7fae1f0f3fcfbf4fbf6f0bbf3e7" class="btn-ghost">
-        <i class="fa fa-envelope"></i> Nous contacter
-      </a>
+  <div class="section-wrap">
+    <div class="cta-block">
+      <h2>Pr&ecirc;t &agrave; d&eacute;marrer ?</h2>
+      <p>Rejoignez les mandataires judiciaires qui font confiance &agrave; Prot&eacute;Finance pour g&eacute;rer leurs dossiers avec pr&eacute;cision et s&eacute;r&eacute;nit&eacute;.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <button class="btn-primary" onclick="openDemoModal()">
+          <i class="fa fa-calendar-check"></i> D&eacute;mo gratuite
+        </button>
+        <a href="https://app.protefinance.fr" class="btn-ghost">
+          <i class="fa fa-arrow-right-to-bracket"></i> Acc&eacute;der &agrave; l&apos;application
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
-  <div class="footer-links">
-    <a href="https://app.protefinance.fr">Application</a>
-    <a href="/cdn-cgi/l/email-protection#5e3d31302a3f3d2a1e2e2c312a3b3837303f303d3b70382c"><span class="__cf_email__" data-cfemail="b7d4d8d9c3d6d4c3f7c7c5d8c3d2d1ded9d6d9d4d299d1c5">[email&#160;protected]</span></a>
-    <a href="/mentions-legales.html">Mentions l&eacute;gales</a>
-    <a href="/pol
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <strong>Prot&eacute;Finance</strong>
+        <p>Suite logicielle d&eacute;di&eacute;e aux mandataires judiciaires &agrave; la protection des majeurs.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Modules</h4>
+        <a href="#modules">Comptabilit&eacute;</a>
+        <a href="#modules">CDG &amp; Greffe</a>
+        <a href="#modules">Patrimoine</a>
+        <a href="#modules">GED</a>
+        <a href="#modules">Courriers</a>
+        <a href="#modules">Pilotage</a>
+      </div>
+      <div class="footer-col">
+        <h4>Application</h4>
+        <a href="https://app.protefinance.fr">Acc&egrave;s</a>
+        <a href="#demo">D&eacute;monstration</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <a href="#contact">Contact</a>
+        <a href="/mentions-legales.html">Mentions l&eacute;gales</a>
+        <a href="/politique-confidentialite.html">Confidentialit&eacute;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Prot&eacute;Finance &mdash; Tous droits r&eacute;serv&eacute;s</span>
+      <div class="footer-badges">
+        <span class="badge">RGPD</span>
+        <span class="badge">TLS</span>
+        <span class="badge">MJPM</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL DEMO -->
+<div class="modal-overlay" id="demo-modal" onclick="closeDemoModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('demo-modal').classList.remove('open')"><i class="fa fa-times"></i></button>
+    <div class="modal-icon" style="background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);color:#60a5fa">
+      <i class="fa fa-calendar-check"></i>
+    </div>
+    <h3 class="modal-title">Demande de d&eacute;monstration</h3>
+    <p class="modal-sub">Remplissez ce formulaire et nous vous contacterons sous 24h pour planifier votre d&eacute;mo personnalis&eacute;e gratuite.</p>
+    <form class="cf-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" onsubmit="submitDemoForm(event)">
+      <div class="cf-row">
+        <div class="cf-group">
+          <label class="cf-label">Pr&eacute;nom *</label>
+          <input class="cf-input" type="text" name="prenom" required placeholder="Jean">
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">Nom *</label>
+          <input class="cf-input" type="text" name="nom" required placeholder="Dupont">
+        </div>
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">Email *</label>
+        <input class="cf-input" type="email" name="email" required placeholder="jean@exemple.fr">
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">T&eacute;l&eacute;phone</label>
+        <input class="cf-input" type="tel" name="tel" placeholder="06 00 00 00 00">
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">Modules qui vous int&eacute;ressent</label>
+        <select class="cf-select" name="module">
+          <option value="tous">Tous les modules</option>
+          <option value="compta">Comptabilit&eacute;</option>
+          <option value="cdg">CDG &amp; Greffe</option>
+          <option value="patrimoine">Patrimoine</option>
+          <option value="ged">GED</option>
+          <option value="courriers">Courriers</option>
+          <option value="pilotage">Pilotage 360&deg;</option>
+        </select>
+      </div>
+      <input type="hidden" name="_subject" value="Demande de d&eacute;mo Prot&eacute;Finance">
+      <button type="submit" class="cf-submit">
+        <i class="fa fa-paper-plane"></i> Envoyer ma demande
+      </button>
+      <div class="cf-success" id="demo-success">
+        <i class="fa fa-check-circle"></i> Demande envoy&eacute;e ! Nous vous contactons sous 24h.
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODALS MODULES -->
+<div class="modal-overlay" id="module-modal" onclick="closeModuleModal(event)">
+  <div class="modal-box" id="module-modal-content"></div>
+</div>
+
+<script>
+var modules={
+  compta:{color:'#60a5fa',bg:'rgba(26,86,219,.15)',border:'rgba(26,86,219,.3)',icon:'fa-calculator',title:'Comptabilit&eacute;',sub:'Gestion compl&egrave;te des op&eacute;rations financi&egrave;res de vos dossiers de protection. Import automatis&eacute; des relev&eacute;s bancaires, pointage et rapprochement en quelques clics.',feats:['Import OFX, CSV, PDF','R&egrave;gles de ventilation automatiques','Rapprochement bancaire','Tableaux de bord financi&egrave;rs','Export Excel et comptable','Suivi multi-comptes']},
+  cdg:{color:'#a78bfa',bg:'rgba(124,58,237,.15)',border:'rgba(124,58,237,.3)',icon:'fa-file-lines',title:'CDG &amp; Greffe',sub:'G&eacute;n&eacute;ration automatis&eacute;e du compte de gestion annuel et du bilan de travail, conformes aux exigences des tribunaux judiciaires.',feats:['PDF conforme greffe','Tableau de bord CDG','Suivi des d&eacute;lais','Validation multi-niveau','Historique annuel','Export et envoi direct']},
+  patrimoine:{color:'#34d399',bg:'rgba(5,150,105,.12)',border:'rgba(5,150,105,.3)',icon:'fa-building-columns',title:'Patrimoine',sub:'Gestion compl&egrave;te du patrimoine de la personne prot&eacute;g&eacute;e. Inventaires, biens, actes et suivi des autorisations judiciaires.',feats:['Inventaires d&eacute;taill&eacute;s','Biens immobiliers &amp; mobiliers','Actes patrimoniaux','Autorisations judiciaires','Alertes &eacute;ch&eacute;ances','Rapport patrimoine']},
+  ged:{color:'#fbbf24',bg:'rgba(217,119,6,.12)',border:'rgba(217,119,6,.3)',icon:'fa-folder-open',title:'GED int&eacute;gr&eacute;e',sub:'Gestion documentaire centralis&eacute;e pour tous vos dossiers. Classement automatique, conformit&eacute; PJ et acc&egrave;s s&eacute;curis&eacute; depuis n&apos;importe o&ugrave;.',feats:['Classement automatique','Conformit&eacute; PJ contr&ocirc;l&eacute;e','Recherche plein texte','Historique versionn&eacute;','Partage s&eacute;curis&eacute;','Archivage l&eacute;gal']},
+  courriers:{color:'#f472b6',bg:'rgba(236,72,153,.12)',border:'rgba(236,72,153,.3)',icon:'fa-envelope',title:'Courriers &amp; Publipostage',sub:'Biblioth&egrave;que de mod&egrave;les MJPM, g&eacute;n&eacute;ration automatique personnalis&eacute;e et publipostage en masse avec suivi des envois.',feats:['Mod&egrave;les MJPM officiels','G&eacute;n&eacute;ration automatique','Publipostage en masse','Suivi des envois','Archivage GED auto','Historique courriers']},
+  pilotage:{color:'#22d3ee',bg:'rgba(6,182,212,.12)',border:'rgba(6,182,212,.3)',icon:'fa-chart-line',title:'Pilotage 360&deg;',sub:'Tableau de bord KPI en temps r&eacute;el, alertes intelligentes et frise r&eacute;glementaire pour ne jamais manquer une &eacute;ch&eacute;ance.',feats:['Cockpit KPI','Alertes temps r&eacute;el','Frise r&eacute;glementaire','Conformit&eacute; obligations','Rapports automatis&eacute;s','Vue multi-dossiers']}
+};
+
+function openModule(id){
+  var m=modules[id];
+  var feats=m.feats.map(function(f){return '<div class="modal-feat"><i class="fa fa-check-circle" style="color:'+m.color+'"></i>'+f+'</div>';}).join('');
+  document.getElementById('module-modal-content').innerHTML=
+    '<button class="modal-close" onclick="document.getElementById(\'module-modal\').classList.remove(\'open\')"><i class="fa fa-times"></i></button>'+
+    '<div class="modal-icon" style="background:'+m.bg+';border:1px solid '+m.border+';color:'+m.color+'"><i class="fa '+m.icon+'"></i></div>'+
+    '<h3 class="modal-title">'+m.title+'</h3>'+
+    '<p class="modal-sub">'+m.sub+'</p>'+
+    '<div class="modal-features">'+feats+'</div>'+
+    '<div class="modal-actions">'+
+    '<button class="btn-primary" onclick="document.getElementById(\'module-modal\').classList.remove(\'open\');openDemoModal()"><i class="fa fa-calendar-check"></i> Demander une d&eacute;mo</button>'+
+    '<a href="https://app.protefinance.fr" class="btn-ghost"><i class="fa fa-arrow-right-to-bracket"></i> Essayer</a>'+
+    '</div>';
+  document.getElementById('module-modal').classList.add('open');
+}
+function closeModuleModal(e){if(e.target===document.getElementById('module-modal'))document.getElementById('module-modal').classList.remove('open')}
+function openDemoModal(){document.getElementById('demo-modal').classList.add('open')}
+function closeDemoModal(e){if(e.target===document.getElementById('demo-modal'))document.getElementById('demo-modal').classList.remove('open')}
+function toggleFaq(btn){var item=btn.parentElement;item.classList.toggle('open')}
+function toggleMenu(){var l=document.querySelector('.nav-links');l.style.display=l.style.display==='flex'?'none':'flex'}
+function submitForm(e){
+  e.preventDefault();
+  var form=e.target;
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+  .then(function(r){if(r.ok){form.reset();document.getElementById('cf-success').style.display='block'}})
+  .catch(function(){document.getElementById('cf-success').style.display='block'});
+}
+function submitDemoForm(e){
+  e.preventDefault();
+  var form=e.target;
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+  .then(function(r){if(r.ok){form.reset();document.getElementById('demo-success').style.display='block'}})
+  .catch(function(){document.getElementById('demo-success').style.display='block'});
+}
+</script>
+</body>
+</html>
