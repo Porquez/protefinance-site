@@ -215,6 +215,25 @@ section{padding:6rem 2rem}
 .cf-sub{background:var(--blue);color:#fff;border:none;border-radius:10px;padding:.9rem;font-family:"DM Sans",sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .15s,transform .1s;display:flex;align-items:center;justify-content:center;gap:8px}
 .cf-sub:hover{background:var(--blue-d);transform:translateY(-1px)}
 .cf-ok{display:none;background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.3);color:var(--green);border-radius:8px;padding:.9rem;font-size:.82rem;text-align:center}
+.cf-legal-note{margin-top:.75rem;font-size:.72rem;line-height:1.7;color:var(--mist)}
+.cf-legal-note a{color:#60a5fa;text-decoration:none}
+.cf-thanks{display:none;background:linear-gradient(135deg,rgba(5,150,105,.10),rgba(26,86,219,.08));border:1px solid rgba(52,211,153,.28);border-radius:14px;padding:1.15rem 1.1rem;color:var(--frost)}
+.cf-thanks.is-visible{display:block}
+.cf-thanks-title{display:flex;align-items:center;gap:.6rem;font-weight:700;margin-bottom:.4rem}
+.cf-thanks-title i{color:var(--green)}
+.cf-thanks p{font-size:.82rem;line-height:1.7;color:var(--steel)}
+.cf-thanks-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.9rem}
+.notice-soft{margin-top:1rem;padding:.9rem 1rem;border:1px solid var(--border);background:rgba(255,255,255,.03);border-radius:10px;font-size:.76rem;line-height:1.7;color:var(--steel)}
+.notice-soft strong{color:var(--frost)}
+
+.cf-err{display:none;background:rgba(220,53,69,.1);border:1px solid rgba(220,53,69,.28);color:#fecdd3;border-radius:8px;padding:.9rem;font-size:.82rem;line-height:1.6}
+.cf-help{font-size:.74rem;color:var(--mist);line-height:1.6}
+.cf-sub[disabled]{opacity:.75;cursor:not-allowed;transform:none}
+.cf-consent{display:flex;gap:.65rem;align-items:flex-start;font-size:.78rem;color:var(--steel);line-height:1.6}
+.cf-consent input{margin-top:.2rem;accent-color:var(--blue)}
+.cf-turnstile-wrap{display:none}
+.cf-turnstile-wrap.is-visible{display:block}
+.hp-field{position:absolute!important;left:-5000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
 
 /* CTA */
 .cta-final{background:linear-gradient(135deg,rgba(26,86,219,.14),rgba(26,86,219,.06));border:1px solid rgba(26,86,219,.22);border-radius:24px;padding:6rem 3rem;text-align:center;position:relative;overflow:hidden}
@@ -313,7 +332,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
 
 <!-- TICKER FONCTIONNALITÉS -->
 <div class="ticker-wrap" style="padding-top:4.5rem">
-  <div class="ticker-track"><span class="ticker-item"><i class="fa fa-calculator"></i>Comptabilité tutelles<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-lines"></i>CDG conforme greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-building-columns"></i>Gestion patrimoine<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-folder-open"></i>GED intégrée<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-envelope"></i>Publipostage MJPM<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-chart-line"></i>Pilotage 360°<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-import"></i>Import OFX/CSV/PDF<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bank"></i>Rapprochement bancaire auto<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-shield-halved"></i>Chiffrement AES-256<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-users"></i>Multi-utilisateurs<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bell"></i>Alertes délais greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-mobile-alt"></i>Application PWA mobile<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-pdf"></i>PDF accepté tribunal<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-cloud"></i>Sauvegarde quotidienne<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-lock"></i>RGPD certifié<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-rotate"></i>MAJ réglementaires incluses<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-calculator"></i>Comptabilité tutelles<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-lines"></i>CDG conforme greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-building-columns"></i>Gestion patrimoine<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-folder-open"></i>GED intégrée<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-envelope"></i>Publipostage MJPM<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-chart-line"></i>Pilotage 360°<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-import"></i>Import OFX/CSV/PDF<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bank"></i>Rapprochement bancaire auto<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-shield-halved"></i>Chiffrement AES-256<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-users"></i>Multi-utilisateurs<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bell"></i>Alertes délais greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-mobile-alt"></i>Application PWA mobile<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-pdf"></i>PDF accepté tribunal<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-cloud"></i>Sauvegarde quotidienne<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-lock"></i>RGPD certifié<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-rotate"></i>MAJ réglementaires incluses<span class="ti-sep">·</span></span></div>
+  <div class="ticker-track"><span class="ticker-item"><i class="fa fa-calculator"></i>Comptabilité tutelles<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-lines"></i>CDG & dépôt greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-building-columns"></i>Gestion patrimoine<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-folder-open"></i>GED intégrée<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-envelope"></i>Publipostage MJPM<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-chart-line"></i>Pilotage 360°<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-import"></i>Import OFX/CSV/PDF<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bank"></i>Rapprochement bancaire auto<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-shield-halved"></i>Chiffrement AES-256<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-users"></i>Multi-utilisateurs<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bell"></i>Alertes délais greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-mobile-alt"></i>Application PWA mobile<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-pdf"></i>PDF d'exploitation tribunal<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-cloud"></i>Sauvegarde quotidienne<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-lock"></i>Approche RGPD<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-rotate"></i>MAJ réglementaires incluses<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-calculator"></i>Comptabilité tutelles<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-lines"></i>CDG & dépôt greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-building-columns"></i>Gestion patrimoine<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-folder-open"></i>GED intégrée<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-envelope"></i>Publipostage MJPM<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-chart-line"></i>Pilotage 360°<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-import"></i>Import OFX/CSV/PDF<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bank"></i>Rapprochement bancaire auto<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-shield-halved"></i>Chiffrement AES-256<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-users"></i>Multi-utilisateurs<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-bell"></i>Alertes délais greffe<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-mobile-alt"></i>Application PWA mobile<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-file-pdf"></i>PDF d'exploitation tribunal<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-cloud"></i>Sauvegarde quotidienne<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-lock"></i>Approche RGPD<span class="ti-sep">·</span></span><span class="ticker-item"><i class="fa fa-rotate"></i>MAJ réglementaires incluses<span class="ti-sep">·</span></span></div>
 </div>
 
 <!-- HERO -->
@@ -322,7 +341,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
   <div class="hero-glow"></div>
   <div class="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow">Plateforme certifiée MJPM</div>
+      <div class="hero-eyebrow">Solution pensée pour les professionnels MJPM</div>
       <h1>Gérez vos tutelles<br>avec <em>précision</em><br>&amp; sérénité</h1>
       <p class="hero-sub">Comptabilité, patrimoine, CDG, GED et pilotage 360° réunis dans un espace sécurisé dédié aux mandataires judiciaires à la protection des majeurs.</p>
       <div class="hero-btns">
@@ -330,10 +349,10 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
         <a href="https://app.protefinance.fr" class="btn-g"><i class="fa fa-arrow-right-to-bracket"></i> Accéder</a>
       </div>
       <div class="hero-trust">
-        <span class="trust-chip"><i class="fa fa-check-circle"></i> Conforme greffe</span>
-        <span class="trust-chip"><i class="fa fa-check-circle"></i> RGPD certifié</span>
+        <span class="trust-chip"><i class="fa fa-check-circle"></i> Pensé pour le greffe</span>
+        <span class="trust-chip"><i class="fa fa-check-circle"></i> Approche RGPD</span>
         <span class="trust-chip"><i class="fa fa-check-circle"></i> TLS chiffré</span>
-        <span class="trust-chip"><i class="fa fa-check-circle"></i> Support inclus</span>
+        <span class="trust-chip"><i class="fa fa-check-circle"></i> Accompagnement inclus</span>
       </div>
     </div>
     <div class="hero-right">
@@ -350,7 +369,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
       </div>
       <div class="hfb hfb3">
         <div class="hfb-icon" style="background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);color:#60a5fa"><i class="fa fa-gavel"></i></div>
-        <div><div class="hfb-val">MJPM</div><div class="hfb-lbl">Certifié mandataires</div></div>
+        <div><div class="hfb-val">MJPM</div><div class="hfb-lbl">Conçu pour les mandataires</div></div>
       </div>
     </div>
   </div>
@@ -360,9 +379,9 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
 <div class="stats-bar">
   <div class="stats-i">
     <div class="stat"><div class="stat-num" data-count="6">6</div><div class="stat-label">Modules intégrés</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Conforme greffe</div></div>
+    <div class="stat"><div class="stat-num">&Agrave; jour</div><div class="stat-label">Cadre greffe &amp; CDG</div></div>
     <div class="stat"><div class="stat-num">360°</div><div class="stat-label">Pilotage intégré</div></div>
-    <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Support inclus</div></div>
+    <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Accompagnement inclus</div></div>
     <div class="stat"><div class="stat-num">RGPD</div><div class="stat-label">Données protégées</div></div>
   </div>
 </div>
@@ -384,7 +403,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
       <div class="mc reveal reveal-delay-2" style="--mc:#a78bfa" data-action="module" data-id="cdg">
         <div class="mc-icon"><i class="fa fa-file-lines"></i></div>
         <div class="mc-title">CDG &amp; Greffe</div>
-        <div class="mc-desc">Compte de gestion annuel et bilan de travail conformes aux exigences judiciaires.</div>
+        <div class="mc-desc">Compte de gestion annuel et bilan de travail structurés pour vos usages de contrôle, de dépôt et de vérification.</div>
         <ul class="mc-list"><li>Génération PDF automatique</li><li>Tableau de bord CDG</li><li>Suivi des délais greffe</li><li>Validation multi-niveau</li></ul>
         <button class="mc-btn">Découvrir <i class="fa fa-arrow-right"></i></button>
       </div>
@@ -422,7 +441,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
 
 <!-- TICKER MÉTIER -->
 <div class="mticker-wrap">
-  <div class="mticker-track"><span class="mticker-item"><i class="fa fa-check-circle"></i>Tutelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Curatelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Sauvegarde de justice<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Habilitation familiale<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Mandataire judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>MJPM certifié<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Bilan de travail<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Compte de gestion<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Requête tribunal<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Inventaire patrimoine<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Biens immobiliers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Placements financiers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Autorisation judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Rapport au juge<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Droits sociaux<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>AAH / RSA / retraite<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Succession<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Fiscalité protégé<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Cotutelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Tutelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Curatelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Sauvegarde de justice<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Habilitation familiale<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Mandataire judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>MJPM certifié<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Bilan de travail<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Compte de gestion<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Requête tribunal<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Inventaire patrimoine<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Biens immobiliers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Placements financiers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Autorisation judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Rapport au juge<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Droits sociaux<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>AAH / RSA / retraite<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Succession<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Fiscalité protégé<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Cotutelle<span class="mticker-chip">MJPM</span></span></div>
+  <div class="mticker-track"><span class="mticker-item"><i class="fa fa-check-circle"></i>Tutelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Curatelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Sauvegarde de justice<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Habilitation familiale<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Mandataire judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Conçu pour les MJPM<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Bilan de travail<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Compte de gestion<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Requête tribunal<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Inventaire patrimoine<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Biens immobiliers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Placements financiers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Autorisation judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Rapport au juge<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Droits sociaux<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>AAH / RSA / retraite<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Succession<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Fiscalité protégé<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Cotutelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Tutelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Curatelle<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Sauvegarde de justice<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Habilitation familiale<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Mandataire judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Conçu pour les MJPM<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Bilan de travail<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Compte de gestion<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Requête tribunal<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Inventaire patrimoine<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Biens immobiliers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Placements financiers<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Autorisation judiciaire<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Rapport au juge<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Droits sociaux<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>AAH / RSA / retraite<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Succession<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Fiscalité protégé<span class="mticker-chip">MJPM</span></span><span class="mticker-item"><i class="fa fa-check-circle"></i>Cotutelle<span class="mticker-chip">MJPM</span></span></div>
 </div>
 
 <!-- FONCTIONNALITÉS TABS -->
@@ -521,7 +540,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
 </div></div></div>
     <div class="feat-panel" id="fp-cdg"><div class="feat-list reveal"><div class="feat-item">
           <div class="feat-item-icon" style="background:rgba(124,58,237,.1);border:1px solid #a78bfa40;color:#a78bfa"><i class="fa fa-file-lines"></i></div>
-          <div><div class="feat-item-title">CDG automatique</div><div class="feat-item-desc">Génération PDF du compte de gestion conforme aux modèles officiels du tribunal.</div></div>
+          <div><div class="feat-item-title">CDG automatique</div><div class="feat-item-desc">Génération PDF du compte de gestion adapté à vos usages de contrôle et de dépôt.</div></div>
         </div><div class="feat-item">
           <div class="feat-item-icon" style="background:rgba(26,86,219,.1);border:1px solid #60a5fa40;color:#60a5fa"><i class="fa fa-calendar-days"></i></div>
           <div><div class="feat-item-title">Suivi délais</div><div class="feat-item-desc">Alertes automatiques avant les dates limites de dépôt au greffe.</div></div>
@@ -586,7 +605,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
     </div>
     <div style="flex:1;background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:.5rem;text-align:center">
       <div style="font-size:1rem;font-weight:700;color:#34d399;font-family:DM Serif Display,serif">100%</div>
-      <div style="font-size:.55rem;color:#94a3b8">PJ conformes</div>
+      <div style="font-size:.55rem;color:#94a3b8">PJ suivies</div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:.35rem">
@@ -642,7 +661,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
       <div class="proc-step reveal reveal-delay-4">
         <div class="proc-num">4</div>
         <div class="proc-title">Production opérationnelle</div>
-        <div class="proc-desc">Votre équipe est formée, vos dossiers importés. Support inclus pour toute question.</div>
+        <div class="proc-desc">Votre équipe est formée, vos dossiers importés. Accompagnement inclus pour toute question.</div>
       </div>
     </div>
   </div>
@@ -703,7 +722,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
         <h2 class="st reveal reveal-delay-1">Respect total du cadre légal MJPM</h2>
         <p class="ss reveal reveal-delay-2">Conçu en adhérence stricte avec les obligations des mandataires judiciaires à la protection des majeurs.</p>
         <div class="conf-list">
-          <div class="conf-item reveal reveal-delay-1"><i class="fa fa-check-circle"></i><div><strong>Loi du 5 mars 2007</strong> — Modèles conformes aux réformes de la protection des majeurs</div></div>
+          <div class="conf-item reveal reveal-delay-1"><i class="fa fa-check-circle"></i><div><strong>Loi du 5 mars 2007</strong> — Référentiel métier et modèles de travail pour la protection des majeurs</div></div>
           <div class="conf-item reveal reveal-delay-2"><i class="fa fa-check-circle"></i><div><strong>Décret MJPM</strong> — CDG et bilan de travail aux formats officiels du greffe</div></div>
           <div class="conf-item reveal reveal-delay-3"><i class="fa fa-check-circle"></i><div><strong>RGPD</strong> — Données personnelles protégées, droit à l'oubli, registre des traitements</div></div>
           <div class="conf-item reveal reveal-delay-4"><i class="fa fa-check-circle"></i><div><strong>Greffe du tribunal</strong> — PDF directement acceptables par les juges des tutelles</div></div>
@@ -712,8 +731,8 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
       </div>
       <div>
         <div class="badges-grid reveal">
-          <div class="cbadge"><i class="fa fa-gavel" style="color:#a78bfa"></i><span>Conforme<br>tribunal</span></div>
-          <div class="cbadge"><i class="fa fa-lock" style="color:#60a5fa"></i><span>RGPD<br>certifié</span></div>
+          <div class="cbadge"><i class="fa fa-gavel" style="color:#a78bfa"></i><span>Cadre<br>tribunal</span></div>
+          <div class="cbadge"><i class="fa fa-lock" style="color:#60a5fa"></i><span>Cadre<br>RGPD</span></div>
           <div class="cbadge"><i class="fa fa-shield-halved" style="color:#34d399"></i><span>Données<br>chiffrées</span></div>
           <div class="cbadge"><i class="fa fa-file-lines" style="color:#fbbf24"></i><span>CDG<br>officiel</span></div>
           <div class="cbadge"><i class="fa fa-users" style="color:#f472b6"></i><span>MJPM<br>dédié</span></div>
@@ -761,14 +780,14 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
     <div class="ey reveal">FAQ</div>
     <h2 class="st reveal reveal-delay-1">Questions fréquentes</h2>
     <div class="faq-wrap">
-      <div class="fi reveal"><button class="fq" data-action="faq">ProtéFinance est-il conforme aux exigences du greffe ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Oui. Le module CDG génère des PDF conformes aux modèles officiels exigés par les tribunaux judiciaires. Les formats sont mis à jour régulièrement en fonction des évolutions réglementaires.</div></div>
-      <div class="fi reveal"><button class="fq" data-action="faq">Mes données sont-elles sécurisées ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Toutes les données sont chiffrées au repos et en transit (TLS 1.3). L'application respecte le RGPD. Les sauvegardes sont automatisées quotidiennement sur serveurs hébergés en France.</div></div>
+      <div class="fi reveal"><button class="fq" data-action="faq">ProtéFinance est-il adapté aux exigences de dépôt et de contrôle ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Le module CDG est conçu pour produire des documents exploitables pour le dépôt et le contrôle. Un contrôle interne de vos modèles, de vos paramétrages et des attentes de votre juridiction reste recommandé avant mise en production.</div></div>
+      <div class="fi reveal"><button class="fq" data-action="faq">Mes données sont-elles sécurisées ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Les flux web sont chiffrés en transit. La mise en conformité RGPD dépend aussi de vos procédures internes, de vos mentions d’information, de votre hébergement et de vos réglages d’exploitation.</div></div>
       <div class="fi reveal"><button class="fq" data-action="faq">Peut-on importer mes données existantes ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Oui. ProtéFinance accepte les imports OFX, CSV et PDF pour les relevés bancaires. Une procédure de migration assistée est disponible sur demande pour l'historique de vos dossiers.</div></div>
       <div class="fi reveal"><button class="fq" data-action="faq">Peut-on travailler à plusieurs sur un même dossier ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Oui. Le système multi-utilisateurs permet des comptes collaborateurs avec rôles et permissions distincts par organisation et par dossier bénéficiaire.</div></div>
       <div class="fi reveal"><button class="fq" data-action="faq">Y a-t-il un accès mobile ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">L'application est optimisée pour mobile et tablette. Une version PWA (Progressive Web App) installable sur l'écran d'accueil Android et iOS est disponible.</div></div>
       <div class="fi reveal"><button class="fq" data-action="faq">Quel est le coût ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Contactez-nous via le formulaire pour un devis adapté à votre structure et au nombre de dossiers. Une période d'essai gratuite de 30 jours est proposée sans engagement.</div></div>
       <div class="fi reveal"><button class="fq" data-action="faq">Est-il possible de personnaliser les modèles de courriers ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Oui. La bibliothèque de modèles MJPM est entièrement personnalisable. Vous pouvez ajouter vos propres templates et les partager avec votre équipe.</div></div>
-      <div class="fi reveal"><button class="fq" data-action="faq">Quels formats de sortie sont disponibles pour le CDG ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Le CDG peut être exporté en PDF (format officiel greffe), en Excel pour votre expert-comptable, et en format dématérialisé compatible avec les plateformes judiciaires.</div></div>
+      <div class="fi reveal"><button class="fq" data-action="faq">Quels formats de sortie sont disponibles pour le CDG ?<i class="fa fa-chevron-down"></i></button><div class="fa-ans">Le CDG peut être exporté en PDF de dépôt et de travail, en Excel pour votre expert-comptable, et en format dématérialisé compatible avec les plateformes judiciaires.</div></div>
     </div>
   </div>
 </section>
@@ -781,33 +800,41 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
         <div class="ey reveal">Contact</div>
         <h2 class="st reveal reveal-delay-1">Parlons de votre projet</h2>
         <p class="ss reveal reveal-delay-2">Notre équipe est disponible pour répondre à vos questions et organiser une démonstration.</p>
+        <div class="notice-soft reveal reveal-delay-3"><strong>Point d’attention :</strong> les éléments de conformité, de dépôt et d’adéquation réglementaire doivent être validés selon vos paramétrages, vos procédures internes et, le cas échéant, les attentes de votre juridiction.</div>
         <div class="ci-list">
           <div class="ci reveal"><div class="ci-icon"><i class="fa fa-envelope"></i></div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a></div></div></div>
           <div class="ci reveal reveal-delay-1"><div class="ci-icon"><i class="fa fa-globe"></i></div><div><div class="ci-lbl">Site web</div><div class="ci-val"><a href="https://www.protefinance.fr">www.protefinance.fr</a></div></div></div>
           <div class="ci reveal reveal-delay-2"><div class="ci-icon"><i class="fa fa-clock"></i></div><div><div class="ci-lbl">Réponse</div><div class="ci-val">Sous 24h ouvrables</div></div></div>
         </div>
       </div>
-      <form class="cf reveal" action="https://formspree.io/f/xvzvwwln" method="POST" data-form="contact">
+      <form id="contact-form" class="cf reveal" action="https://formspree.io/f/xvzvwwln" method="POST" data-form="contact" novalidate>
+        <input type="hidden" name="_subject" value="Contact site ProtéFinance">
+        <input type="hidden" name="source_form" value="contact_site">
+        <input type="hidden" name="source_page" value="homepage_contact">
+        <input type="hidden" name="source_origin" value="www.protefinance.fr">
+        <input type="hidden" name="source_title" value="ProtéFinance — Contact">
+        <input type="hidden" name="submitted_at" value="">
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cf-row">
-          <div class="cf-g"><label class="cf-lbl">Prénom *</label><input class="cf-in" type="text" name="prenom" required placeholder="Jean"></div>
-          <div class="cf-g"><label class="cf-lbl">Nom *</label><input class="cf-in" type="text" name="nom" required placeholder="Dupont"></div>
+          <div class="cf-g"><label class="cf-lbl" for="contact-prenom">Prénom *</label><input id="contact-prenom" class="cf-in" type="text" name="prenom" required autocomplete="given-name" placeholder="Jean"></div>
+          <div class="cf-g"><label class="cf-lbl" for="contact-nom">Nom *</label><input id="contact-nom" class="cf-in" type="text" name="nom" required autocomplete="family-name" placeholder="Dupont"></div>
         </div>
-        <div class="cf-g"><label class="cf-lbl">Email professionnel *</label><input class="cf-in" type="email" name="email" required placeholder="jean@exemple.fr"></div>
-        <div class="cf-g"><label class="cf-lbl">Structure</label><input class="cf-in" type="text" name="structure" placeholder="Association, cabinet..."></div>
+        <div class="cf-g"><label class="cf-lbl" for="contact-email">Email professionnel *</label><input id="contact-email" class="cf-in" type="email" name="email" required autocomplete="email" placeholder="jean@exemple.fr"></div>
+        <div class="cf-g"><label class="cf-lbl" for="contact-structure">Structure</label><input id="contact-structure" class="cf-in" type="text" name="structure" autocomplete="organization" placeholder="Association, cabinet..."></div>
         <div class="cf-row">
-          <div class="cf-g"><label class="cf-lbl">Téléphone</label><input class="cf-in" type="tel" name="tel" placeholder="06 00 00 00 00"></div>
-          <div class="cf-g"><label class="cf-lbl">Nombre de dossiers</label>
-            <select class="cf-sel" name="volume">
+          <div class="cf-g"><label class="cf-lbl" for="contact-tel">Téléphone</label><input id="contact-tel" class="cf-in" type="tel" name="tel" autocomplete="tel" placeholder="06 00 00 00 00"></div>
+          <div class="cf-g"><label class="cf-lbl" for="contact-volume">Nombre de dossiers</label>
+            <select id="contact-volume" class="cf-sel" name="volume">
               <option value="">Sélectionner...</option>
-              <option>Moins de 20</option>
-              <option>20 à 50</option>
-              <option>50 à 100</option>
-              <option>Plus de 100</option>
+              <option value="moins_20">Moins de 20</option>
+              <option value="20_50">20 à 50</option>
+              <option value="50_100">50 à 100</option>
+              <option value="plus_100">Plus de 100</option>
             </select>
           </div>
         </div>
-        <div class="cf-g"><label class="cf-lbl">Objet</label>
-          <select class="cf-sel" name="objet">
+        <div class="cf-g"><label class="cf-lbl" for="contact-objet">Objet</label>
+          <select id="contact-objet" class="cf-sel" name="objet">
             <option value="">Sélectionner...</option>
             <option value="demo">Demande de démonstration</option>
             <option value="info">Demande d'information</option>
@@ -816,9 +843,28 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
             <option value="autre">Autre</option>
           </select>
         </div>
-        <div class="cf-g"><label class="cf-lbl">Message *</label><textarea class="cf-ta" name="message" required placeholder="Décrivez votre besoin..."></textarea></div>
+        <div class="cf-g"><label class="cf-lbl" for="contact-message">Message *</label><textarea id="contact-message" class="cf-ta" name="message" required placeholder="Décrivez votre besoin..."></textarea></div>
+        <div class="cf-g cf-turnstile-wrap" data-turnstile-container></div>
+        <div class="cf-g">
+          <label class="cf-consent" for="contact-consentement">
+            <input id="contact-consentement" type="checkbox" name="consentement" value="oui" required>
+            <span>J’accepte que mes données soient utilisées pour être recontacté au sujet de ma demande, conformément à la <a href="/politique-confidentialite.html" style="color:#60a5fa">politique de confidentialité</a>.</span>
+          </label>
+        </div>
+
+        <div class="cf-help">Vos informations sont utilisées uniquement pour traiter votre demande commerciale ou de démonstration.</div>
+        <div class="cf-legal-note">Aucune donnée sensible de personne protégée ne doit être transmise via ce formulaire. Pour toute demande relative au produit, consultez aussi les <a href="/mentions-legales.html">mentions légales</a>, la <a href="/politique-confidentialite.html">politique de confidentialité</a> et les <a href="/cgu.html">CGU</a>.</div>
+        <div class="cf-thanks" id="cf-thanks" aria-live="polite">
+          <div class="cf-thanks-title"><i class="fa fa-circle-check"></i><span>Merci, votre demande a bien été transmise.</span></div>
+          <p>Nous revenons vers vous à l’adresse indiquée dans les meilleurs délais. Pensez à vérifier vos courriers indésirables si vous n’avez pas de réponse rapide.</p>
+          <div class="cf-thanks-actions">
+            <a class="btn-g" href="#faq"><i class="fa fa-circle-question"></i> Consulter la FAQ</a>
+            <button type="button" class="btn-p" data-action="new-message" data-target="contact-form"><i class="fa fa-pen"></i> Envoyer un autre message</button>
+          </div>
+        </div>
+        <div class="cf-err" id="cf-err" aria-live="polite"></div>
         <button type="submit" class="cf-sub"><i class="fa fa-paper-plane"></i> Envoyer le message</button>
-        <div class="cf-ok" id="cf-ok"><i class="fa fa-check-circle"></i> Message envoyé ! Nous vous recontactons sous 24h.</div>
+        <div class="cf-ok" id="cf-ok" aria-live="polite"><i class="fa fa-check-circle"></i> Message envoyé ! Nous vous recontactons sous 24h ouvrables.</div>
       </form>
     </div>
   </div>
@@ -844,7 +890,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
     <div class="ft">
       <div class="fb">
         <strong>ProtéFinance</strong>
-        <p>Suite logicielle dédiée aux mandataires judiciaires à la protection des majeurs. Conforme, sécurisée, professionnelle.</p>
+        <p>Suite logicielle dédiée aux mandataires judiciaires à la protection des majeurs. Pensée pour un usage professionnel, sécurisé et paramétrable.</p>
         <div class="fb-badges"><span class="fbadge">RGPD</span><span class="fbadge">TLS</span><span class="fbadge">MJPM</span><span class="fbadge">Greffe</span></div>
       </div>
       <div class="fcol"><h4>Modules</h4><a href="#modules">Comptabilité</a><a href="#modules">CDG &amp; Greffe</a><a href="#modules">Patrimoine</a><a href="#modules">GED</a><a href="#modules">Courriers</a><a href="#modules">Pilotage 360°</a></div>
@@ -853,7 +899,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
     </div>
     <div class="fb-bottom">
       <span>© 2026 ProtéFinance — Tous droits réservés</span>
-      <span style="color:var(--mist)">Hébergement France · Données chiffrées · RGPD</span>
+      <span style="color:var(--mist)">Hébergement à préciser · Données chiffrées · Cadre RGPD</span>
     </div>
   </div>
 </footer>
@@ -865,16 +911,43 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
     <div class="m-icon" style="background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);color:#60a5fa"><i class="fa fa-calendar-check"></i></div>
     <h3 class="m-title">Demande de démonstration</h3>
     <p class="m-sub">Remplissez ce formulaire — nous vous contactons sous 24h pour planifier votre démo personnalisée gratuite.</p>
-    <form class="cf" action="https://formspree.io/f/xvzvwwln" method="POST" data-form="demo">
-      <div class="cf-row">
-        <div class="cf-g"><label class="cf-lbl">Prénom *</label><input class="cf-in" type="text" name="prenom" required placeholder="Jean"></div>
-        <div class="cf-g"><label class="cf-lbl">Nom *</label><input class="cf-in" type="text" name="nom" required placeholder="Dupont"></div>
-      </div>
-      <div class="cf-g"><label class="cf-lbl">Email *</label><input class="cf-in" type="email" name="email" required placeholder="jean@exemple.fr"></div>
-      <div class="cf-g"><label class="cf-lbl">Téléphone</label><input class="cf-in" type="tel" name="tel" placeholder="06 00 00 00 00"></div>
+    <form id="demo-form" class="cf" action="https://formspree.io/f/xvzvwwln" method="POST" data-form="demo" novalidate>
       <input type="hidden" name="_subject" value="Demande démo ProtéFinance">
+      <input type="hidden" name="source_form" value="demo_modal">
+      <input type="hidden" name="source_page" value="homepage_demo_modal">
+      <input type="hidden" name="source_origin" value="www.protefinance.fr">
+      <input type="hidden" name="source_title" value="ProtéFinance — Démo">
+      <input type="hidden" name="objet" value="demo">
+      <input type="hidden" name="submitted_at" value="">
+      <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cf-row">
+        <div class="cf-g"><label class="cf-lbl" for="demo-prenom">Prénom *</label><input id="demo-prenom" class="cf-in" type="text" name="prenom" required autocomplete="given-name" placeholder="Jean"></div>
+        <div class="cf-g"><label class="cf-lbl" for="demo-nom">Nom *</label><input id="demo-nom" class="cf-in" type="text" name="nom" required autocomplete="family-name" placeholder="Dupont"></div>
+      </div>
+      <div class="cf-g"><label class="cf-lbl" for="demo-email">Email *</label><input id="demo-email" class="cf-in" type="email" name="email" required autocomplete="email" placeholder="jean@exemple.fr"></div>
+      <div class="cf-g"><label class="cf-lbl" for="demo-tel">Téléphone</label><input id="demo-tel" class="cf-in" type="tel" name="tel" autocomplete="tel" placeholder="06 00 00 00 00"></div>
+      <div class="cf-g"><label class="cf-lbl" for="demo-structure">Structure</label><input id="demo-structure" class="cf-in" type="text" name="structure" autocomplete="organization" placeholder="Association, cabinet..."></div>
+      <div class="cf-g"><label class="cf-lbl" for="demo-message">Besoin ou contexte</label><textarea id="demo-message" class="cf-ta" name="message" placeholder="Ex. : démonstration orientée CDG, comptabilité, GED ou patrimoine."></textarea></div>
+      <div class="cf-g cf-turnstile-wrap" data-turnstile-container></div>
+      <div class="cf-g">
+        <label class="cf-consent" for="demo-consentement">
+          <input id="demo-consentement" type="checkbox" name="consentement" value="oui" required>
+          <span>J’accepte que mes données soient utilisées pour être recontacté au sujet de cette demande de démonstration, conformément à la <a href="/politique-confidentialite.html" style="color:#60a5fa">politique de confidentialité</a>.</span>
+        </label>
+      </div>
+      <div class="cf-help">Une démonstration personnalisée vous est proposée selon votre contexte MJPM, vos volumes et vos priorités métier.</div>
+      <div class="cf-legal-note">Merci de ne pas communiquer de données sensibles de personnes protégées dans ce formulaire. Références utiles : <a href="/mentions-legales.html">mentions légales</a>, <a href="/politique-confidentialite.html">confidentialité</a>, <a href="/cgu.html">CGU</a>.</div>
+      <div class="cf-thanks" id="demo-thanks" aria-live="polite">
+        <div class="cf-thanks-title"><i class="fa fa-circle-check"></i><span>Votre demande de démonstration est bien enregistrée.</span></div>
+        <p>Nous vous recontactons pour proposer un créneau adapté à votre contexte, à vos modules prioritaires et à votre organisation.</p>
+        <div class="cf-thanks-actions">
+          <button type="button" class="btn-p" data-action="new-message" data-target="demo-form"><i class="fa fa-pen"></i> Modifier / renvoyer</button>
+          <button type="button" class="btn-g" data-action="close-demo"><i class="fa fa-xmark"></i> Fermer</button>
+        </div>
+      </div>
+      <div class="cf-err" id="demo-err" aria-live="polite"></div>
       <button type="submit" class="cf-sub"><i class="fa fa-paper-plane"></i> Envoyer ma demande</button>
-      <div class="cf-ok" id="demo-ok"><i class="fa fa-check-circle"></i> Demande envoyée ! Réponse sous 24h.</div>
+      <div class="cf-ok" id="demo-ok" aria-live="polite"><i class="fa fa-check-circle"></i> Demande envoyée ! Réponse sous 24h ouvrables.</div>
     </form>
   </div>
 </div>
@@ -888,7 +961,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
 (function(){
 var M={
   compta:{c:"#60a5fa",bg:"rgba(26,86,219,.15)",br:"rgba(26,86,219,.3)",ic:"fa-calculator",t:"Comptabilité",s:"Gestion complète des opérations financières de vos dossiers. Import automatisé des relevés bancaires, pointage et rapprochement en quelques clics.",f:["Import OFX CSV PDF","Ventilation automatique","Rapprochement bancaire","Tableaux de bord","Export Excel comptable","Multi-comptes"]},
-  cdg:{c:"#a78bfa",bg:"rgba(124,58,237,.15)",br:"rgba(124,58,237,.3)",ic:"fa-file-lines",t:"CDG & Greffe",s:"Génération automatisée du compte de gestion annuel et du bilan de travail, conformes aux exigences des tribunaux judiciaires.",f:["PDF conforme greffe","Tableau de bord CDG","Suivi des délais","Validation multi-niveau","Historique annuel","Export direct"]},
+  cdg:{c:"#a78bfa",bg:"rgba(124,58,237,.15)",br:"rgba(124,58,237,.3)",ic:"fa-file-lines",t:"CDG & Greffe",s:"Génération automatisée du compte de gestion annuel et du bilan de travail, avec un cadrage orienté dépôt, contrôle et relecture métier.",f:["PDF de travail pour le greffe","Tableau de bord CDG","Suivi des délais","Validation multi-niveau","Historique annuel","Export direct"]},
   patrimoine:{c:"#34d399",bg:"rgba(5,150,105,.12)",br:"rgba(5,150,105,.3)",ic:"fa-building-columns",t:"Patrimoine",s:"Gestion complète du patrimoine. Inventaires, biens, actes et suivi des autorisations judiciaires.",f:["Inventaires détaillés","Biens immobiliers","Actes patrimoniaux","Autorisations judiciaires","Alertes échéances","Rapport patrimoine"]},
   ged:{c:"#fbbf24",bg:"rgba(217,119,6,.12)",br:"rgba(217,119,6,.3)",ic:"fa-folder-open",t:"GED intégrée",s:"Gestion documentaire centralisée. Classement auto, conformité PJ et accès sécurisé partout.",f:["Classement automatique","Conformité PJ","Recherche plein texte","Historique versionné","Partage sécurisé","Archivage légal"]},
   courriers:{c:"#f472b6",bg:"rgba(236,72,153,.12)",br:"rgba(236,72,153,.3)",ic:"fa-envelope",t:"Courriers & Publipostage",s:"Bibliothèque modèles MJPM, génération auto et publipostage en masse avec suivi des envois.",f:["Modèles MJPM officiels","Génération automatique","Publipostage masse","Suivi des envois","Archivage GED auto","Historique courriers"]},
@@ -917,6 +990,18 @@ document.addEventListener('click', function(e){
   if(a==='demo-from-mod'){document.getElementById('module-modal').classList.remove('open');document.getElementById('demo-modal').classList.add('open');}
   if(a==='faq') t.parentElement.classList.toggle('open');
   if(a==='menu'){var nl=document.querySelector('.nav-links');nl.style.display=nl.style.display==='flex'?'none':'flex';}
+  if(a==='new-message'){
+    var targetId=t.getAttribute('data-target');
+    var targetForm=document.getElementById(targetId);
+    if(targetForm){
+      targetForm.style.display='flex';
+      var thanks=document.getElementById(targetId==='demo-form' ? 'demo-thanks' : 'cf-thanks');
+      if(thanks) thanks.classList.remove('is-visible');
+      targetForm.reset();
+      var first=targetForm.querySelector('input,textarea,select');
+      if(first) first.focus();
+    }
+  }
 });
 
 document.getElementById('demo-modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
@@ -948,16 +1033,154 @@ document.querySelectorAll('.ftab').forEach(function(btn){
 });
 
 // Formulaires
-document.querySelectorAll('[data-form]').forEach(function(btn){
-  var form=btn.closest('form');
-  form.addEventListener('submit',function(e){
+var PF_FORMS_CONFIG={
+  endpoint:'https://formspree.io/f/xvzvwwln',
+  turnstileSiteKey:'',
+  thankYouUrl:'',
+  inlineThankYou:true,
+  turnstileScriptLoaded:false
+};
+
+function isRealTurnstileKey(key){
+  return !!key && key !== 'VOTRE_CLE_TURNSTILE' && key !== 'YOUR_TURNSTILE_SITE_KEY';
+}
+
+function loadTurnstileIfNeeded(){
+  if(!isRealTurnstileKey(PF_FORMS_CONFIG.turnstileSiteKey) || PF_FORMS_CONFIG.turnstileScriptLoaded) return;
+  var s=document.createElement('script');
+  s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';
+  s.async=true;
+  s.defer=true;
+  s.onload=function(){renderTurnstileWidgets();};
+  document.head.appendChild(s);
+  PF_FORMS_CONFIG.turnstileScriptLoaded=true;
+}
+
+function renderTurnstileWidgets(){
+  if(!window.turnstile || !isRealTurnstileKey(PF_FORMS_CONFIG.turnstileSiteKey)) return;
+  document.querySelectorAll('form[data-form]').forEach(function(form){
+    var wrap=form.querySelector('[data-turnstile-container]');
+    if(!wrap || wrap.getAttribute('data-rendered')==='1') return;
+    wrap.classList.add('is-visible');
+    var holder=document.createElement('div');
+    holder.className='cf-turnstile';
+    holder.setAttribute('data-sitekey', PF_FORMS_CONFIG.turnstileSiteKey);
+    wrap.appendChild(holder);
+    var widgetId=window.turnstile.render(holder, {sitekey: PF_FORMS_CONFIG.turnstileSiteKey});
+    holder.dataset.widgetId=widgetId;
+    wrap.setAttribute('data-rendered','1');
+  });
+}
+
+function validateForm(form){
+  if(form.checkValidity()) return '';
+  var invalid=form.querySelector(':invalid');
+  if(invalid){
+    invalid.focus();
+    if(invalid.type==='email') return 'Merci de renseigner une adresse email valide.';
+    if(invalid.type==='checkbox') return 'Merci de confirmer votre consentement avant l'envoi.';
+  }
+  return 'Merci de compléter les champs obligatoires avant l'envoi.';
+}
+
+
+function showInlineThankYou(kind,form){
+  var thanks=document.getElementById(kind==='demo' ? 'demo-thanks' : 'cf-thanks');
+  if(!thanks) return false;
+  form.style.display='none';
+  thanks.classList.add('is-visible');
+  if(kind==='demo'){ document.getElementById('demo-modal').scrollTop=0; }
+  return true;
+}
+
+function setMetadata(form){
+  var ts=form.querySelector('input[name="submitted_at"]');
+  if(ts) ts.value=new Date().toISOString();
+  var origin=form.querySelector('input[name="source_origin"]');
+  if(origin) origin.value=window.location.hostname || origin.value;
+  var title=form.querySelector('input[name="source_title"]');
+  if(title) title.value=document.title || title.value;
+}
+
+document.querySelectorAll('form[data-form]').forEach(function(form){
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
-    var okId=btn.getAttribute('data-form')==='demo'?'demo-ok':'cf-ok';
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-    .then(function(r){if(r.ok){form.reset();document.getElementById(okId).style.display='block';}}
-    ).catch(function(){document.getElementById(okId).style.display='block';});
+
+    var kind=form.getAttribute('data-form');
+    var okEl=document.getElementById(kind==='demo' ? 'demo-ok' : 'cf-ok');
+    var errEl=document.getElementById(kind==='demo' ? 'demo-err' : 'cf-err');
+    var submitBtn=form.querySelector('button[type="submit"]');
+    var originalHtml=submitBtn.innerHTML;
+    var thanksEl=document.getElementById(kind==='demo' ? 'demo-thanks' : 'cf-thanks');
+    if(thanksEl) thanksEl.classList.remove('is-visible');
+
+    okEl.style.display='none';
+    errEl.style.display='none';
+    errEl.textContent='';
+
+    var validationMessage=validateForm(form);
+    if(validationMessage){
+      errEl.textContent=validationMessage;
+      errEl.style.display='block';
+      return;
+    }
+
+    if(isRealTurnstileKey(PF_FORMS_CONFIG.turnstileSiteKey)){
+      var tokenField=form.querySelector('input[name="cf-turnstile-response"]');
+      if(!tokenField || !tokenField.value){
+        errEl.textContent='Merci de valider la protection anti-spam avant l'envoi.';
+        errEl.style.display='block';
+        return;
+      }
+    }
+
+    setMetadata(form);
+    submitBtn.disabled=true;
+    submitBtn.innerHTML='<i class="fa fa-spinner fa-spin"></i> Envoi en cours...';
+
+    try{
+      var response=await fetch(form.action || PF_FORMS_CONFIG.endpoint,{
+        method:'POST',
+        body:new FormData(form),
+        headers:{Accept:'application/json'}
+      });
+
+      var payload={};
+      try{ payload=await response.json(); }catch(_e){}
+
+      if(response.ok){
+        form.reset();
+        if(window.turnstile && isRealTurnstileKey(PF_FORMS_CONFIG.turnstileSiteKey)){
+          var widget=form.querySelector('.cf-turnstile');
+          if(widget && widget.dataset.widgetId){ window.turnstile.reset(widget.dataset.widgetId); }
+          else if(window.turnstile.reset){
+            try{ window.turnstile.reset(widget); }catch(_e){}
+          }
+        }
+        okEl.style.display='block';
+        if(PF_FORMS_CONFIG.inlineThankYou){ showInlineThankYou(kind,form); }
+        if(PF_FORMS_CONFIG.thankYouUrl){ window.location.href=PF_FORMS_CONFIG.thankYouUrl; }
+        return;
+      }
+
+      var message='L'envoi a échoué. Merci de vérifier les champs et de réessayer.';
+      if(payload && Array.isArray(payload.errors) && payload.errors.length){
+        message=payload.errors.map(function(err){ return err.message; }).join(' ');
+      }
+      errEl.textContent=message;
+      errEl.style.display='block';
+    }catch(error){
+      errEl.textContent='Erreur réseau ou service temporairement indisponible. Merci de réessayer.';
+      errEl.style.display='block';
+    }finally{
+      submitBtn.disabled=false;
+      submitBtn.innerHTML=originalHtml;
+    }
   });
 });
+
+loadTurnstileIfNeeded();
+renderTurnstileWidgets();
 
 // Scroll reveal
 var obs=new IntersectionObserver(function(entries){
