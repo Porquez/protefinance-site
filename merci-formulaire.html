@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Merci — ProtéFinance</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box} body{margin:0;font-family:"DM Sans",system-ui,sans-serif;background:#070b11;color:#fff}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:
+      radial-gradient(circle at top, rgba(26,86,219,.18), transparent 35%),
+      linear-gradient(180deg,#070b11 0%, #0d1420 100%)}
+    .card{width:min(760px,100%);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:2rem 2rem 1.5rem;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+    .badge{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .8rem;border-radius:999px;background:rgba(26,86,219,.12);border:1px solid rgba(26,86,219,.28);color:#60a5fa;font-size:.78rem;font-weight:600}
+    h1{font-family:"DM Serif Display",serif;font-size:clamp(2rem,4vw,3rem);margin:.9rem 0 .75rem;line-height:1.08}
+    p{color:#94a3b8;line-height:1.75;font-size:1rem;margin:.35rem 0}
+    .panel{margin:1.25rem 0 1rem;padding:1rem 1.1rem;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+    .panel strong{color:#e2e8f0}
+    .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.25rem 0}
+    .meta div{padding:.9rem;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+    .meta .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#64748b;margin-bottom:.25rem}
+    .meta .v{font-weight:600;color:#e2e8f0}
+    .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.35rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:12px;text-decoration:none;font-weight:600}
+    .btn-primary{background:#1a56db;color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#e2e8f0}
+    .foot{margin-top:1rem;font-size:.84rem;color:#64748b}
+    @media(max-width:700px){.meta{grid-template-columns:1fr}.card{padding:1.4rem}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <div class="badge"><i class="fa fa-circle-check"></i><span>Message transmis</span></div>
+      <h1 id="title">Merci, votre message a bien été envoyé.</h1>
+      <p id="intro">Nous avons bien enregistré votre demande. Une réponse vous sera adressée dans les meilleurs délais.</p>
+
+      <section class="panel">
+        <strong id="panel-title">Et maintenant ?</strong>
+        <p id="panel-text">Votre demande arrive dans le circuit de traitement ProtéFinance. Pensez à surveiller votre messagerie, y compris les courriers indésirables si vous attendez un accusé ou une prise de contact rapide.</p>
+      </section>
+
+      <section class="meta">
+        <div>
+          <div class="k">Type</div>
+          <div class="v" id="meta-form">Contact</div>
+        </div>
+        <div>
+          <div class="k">Source</div>
+          <div class="v" id="meta-source">Site web</div>
+        </div>
+        <div>
+          <div class="k">Suite</div>
+          <div class="v" id="meta-next">Prise de contact</div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="/"><i class="fa fa-house"></i><span>Retour au site</span></a>
+        <a class="btn btn-secondary" href="https://app.protefinance.fr"><i class="fa fa-arrow-right-to-bracket"></i><span>Accéder à l’application</span></a>
+      </div>
+
+      <div class="foot">ProtéFinance — formulaire de contact et de démonstration.</div>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      var qs=new URLSearchParams(window.location.search);
+      var form=qs.get('form') || 'contact';
+      var source=qs.get('source') || 'site_web';
+      var objet=qs.get('objet') || '';
+
+      var title=document.getElementById('title');
+      var intro=document.getElementById('intro');
+      var panelTitle=document.getElementById('panel-title');
+      var panelText=document.getElementById('panel-text');
+      var metaForm=document.getElementById('meta-form');
+      var metaSource=document.getElementById('meta-source');
+      var metaNext=document.getElementById('meta-next');
+
+      var sourceLabel=(source || '').replace(/_/g,' ');
+      sourceLabel=sourceLabel.charAt(0).toUpperCase()+sourceLabel.slice(1);
+      metaSource.textContent=sourceLabel;
+
+      if(form==='demo'){
+        title.textContent='Merci, votre demande de démonstration a bien été envoyée.';
+        intro.textContent='Votre demande a bien été transmise. Nous reviendrons vers vous pour proposer un créneau adapté à votre organisation et à vos priorités métier.';
+        panelTitle.textContent='Préparez votre démonstration';
+        panelText.textContent='Pour gagner du temps lors de l’échange, préparez vos points prioritaires : comptabilité, CDG, GED, patrimoine, volumétrie, organisation multi-utilisateurs ou besoins de migration.';
+        metaForm.textContent='Démonstration';
+        metaNext.textContent='Planification';
+      } else {
+        title.textContent='Merci, votre message a bien été envoyé.';
+        intro.textContent='Nous avons bien enregistré votre demande. Une réponse vous sera adressée dans les meilleurs délais.';
+        panelTitle.textContent='Suite du traitement';
+        panelText.textContent='Votre message rejoint le circuit de traitement ProtéFinance. Vous pouvez être recontacté pour une précision, une réponse écrite ou une proposition d’échange selon la nature de votre demande.';
+        metaForm.textContent='Contact';
+        metaNext.textContent=(objet==='demo' ? 'Orientation vers une démo' : 'Prise de contact');
+      }
+    })();
+  </script>
+</body>
+</html>
