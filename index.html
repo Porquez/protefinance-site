@@ -271,7 +271,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
 .fb-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.72rem;color:var(--mist)}
 
 /* SCROLL ANIMATIONS */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:.1s}
 .reveal-delay-2{transition-delay:.2s}
@@ -851,7 +851,7 @@ footer{background:#03060b;border-top:1px solid var(--border);padding:4rem 2rem 2
             <span>J’accepte que mes données soient utilisées pour être recontacté au sujet de ma demande, conformément à la <a href="/politique-confidentialite.html" style="color:#60a5fa">politique de confidentialité</a>.</span>
           </label>
         </div>
-        
+
         <div class="cf-help">Vos informations sont utilisées uniquement pour traiter votre demande commerciale ou de démonstration.</div>
         <div class="cf-legal-note">Aucune donnée sensible de personne protégée ne doit être transmise via ce formulaire. Pour toute demande relative au produit, consultez aussi les <a href="/mentions-legales.html">mentions légales</a>, la <a href="/politique-confidentialite.html">politique de confidentialité</a> et les <a href="/cgu.html">CGU</a>.</div>
         <div class="cf-thanks" id="cf-thanks" aria-live="polite">
@@ -1084,10 +1084,10 @@ function validateForm(form){
   var invalid=form.querySelector(':invalid');
   if(invalid){
     invalid.focus();
-    if(invalid.type==='email') return 'Merci de renseigner une adresse email valide.';
-    if(invalid.type==='checkbox') return 'Merci de confirmer votre consentement avant l'envoi.';
+    if(invalid.type==='email') return "Merci de renseigner une adresse email valide.";
+    if(invalid.type==='checkbox') return 'Merci de confirmer votre consentement avant l\'envoi.';
   }
-  return 'Merci de compléter les champs obligatoires avant l'envoi.';
+  return 'Merci de compléter les champs obligatoires avant l\'envoi.';
 }
 
 
@@ -1146,7 +1146,7 @@ document.querySelectorAll('form[data-form]').forEach(function(form){
     if(isRealTurnstileKey(PF_FORMS_CONFIG.turnstileSiteKey)){
       var tokenField=form.querySelector('input[name="cf-turnstile-response"]');
       if(!tokenField || !tokenField.value){
-        errEl.textContent='Merci de valider la protection anti-spam avant l'envoi.';
+        errEl.textContent='Merci de valider la protection anti-spam avant l\'envoi.';
         errEl.style.display='block';
         return;
       }
@@ -1186,14 +1186,14 @@ document.querySelectorAll('form[data-form]').forEach(function(form){
         return;
       }
 
-      var message='L'envoi a échoué. Merci de vérifier les champs et de réessayer.';
+      var message="L'envoi a échoué. Merci de vérifier les champs et de réessayer.";
       if(payload && Array.isArray(payload.errors) && payload.errors.length){
         message=payload.errors.map(function(err){ return err.message; }).join(' ');
       }
       errEl.textContent=message;
       errEl.style.display='block';
     }catch(error){
-      errEl.textContent='Erreur réseau ou service temporairement indisponible. Merci de réessayer.';
+      errEl.textContent="Erreur réseau ou service temporairement indisponible. Merci de réessayer.";
       errEl.style.display='block';
     }finally{
       submitBtn.disabled=false;
@@ -1204,6 +1204,10 @@ document.querySelectorAll('form[data-form]').forEach(function(form){
 
 loadTurnstileIfNeeded();
 renderTurnstileWidgets();
+
+window.addEventListener('error', function(){
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+}, {once:true});
 
 // Scroll reveal
 var obs=new IntersectionObserver(function(entries){
