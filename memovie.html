@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MémoVie — Mémoire augmentée du quotidien</title>
+<meta name="description" content="MémoVie — L'app Android qui mémorise tout pour vous. Notes, promesses, dettes, rappels, santé. Disponible sur Google Play.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: #f4f6f9; color: #1a2332; }
+  header { background: linear-gradient(135deg, #1B3A6B 0%, #2E5299 100%);
+           color: white; padding: 3rem 1.5rem; text-align: center; }
+  .logo-big { width: 80px; height: 80px; background: rgba(255,255,255,0.15);
+              border-radius: 20px; display: flex; align-items: center;
+              justify-content: center; margin: 0 auto 1.2rem;
+              font-size: 2rem; font-weight: 700; }
+  header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  header p { font-size: 1.1rem; opacity: 0.85; max-width: 500px; margin: 0 auto 1.5rem; }
+  .cta { display: inline-block; background: #F5A623; color: white;
+         padding: 0.9rem 2rem; border-radius: 50px; font-weight: 600;
+         font-size: 1.05rem; text-decoration: none; transition: opacity 0.2s; }
+  .cta:hover { opacity: 0.9; }
+  .badge-protefinance { margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.7; }
+  main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+              gap: 1.2rem; margin-bottom: 3rem; }
+  .feature { background: white; border-radius: 16px; padding: 1.5rem;
+             box-shadow: 0 2px 12px rgba(27,58,107,0.08); }
+  .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .feature h3 { font-size: 1rem; color: #1B3A6B; margin-bottom: 0.5rem; }
+  .feature p { font-size: 0.9rem; color: #5A6A7A; line-height: 1.6; }
+  .security { background: #1B3A6B; color: white; border-radius: 16px;
+              padding: 2rem; margin-bottom: 3rem; }
+  .security h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+  .security-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .sec-item { display: flex; gap: 10px; align-items: flex-start; }
+  .sec-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .sec-text { font-size: 0.9rem; opacity: 0.9; }
+  .links { text-align: center; padding: 2rem 0; }
+  .links a { display: inline-block; margin: 0.5rem; color: #1B3A6B;
+             text-decoration: none; font-weight: 500; }
+  .links a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #8A9BB0;
+           border-top: 1px solid #E0E6EF; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-big">MV</div>
+  <h1>MémoVie</h1>
+  <p>Votre mémoire augmentée du quotidien. Notez tout en 10 secondes. Ne plus jamais oublier.</p>
+  <a href="#" class="cta">📱 Bientôt sur Google Play</a>
+  <p class="badge-protefinance">by ProtéFinance 🇫🇷</p>
+</header>
+
+<main>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🎤</div>
+      <h3>Saisie vocale en 10 secondes</h3>
+      <p>Dictez et l'IA analyse automatiquement : catégorie, personne, montant, échéance.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🤝</div>
+      <h3>Promesses & dettes</h3>
+      <p>Suivez vos engagements et l'argent prêté ou emprunté avec rappels automatiques.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔔</div>
+      <h3>Rappels intelligents</h3>
+      <p>Notifications 24h, 48h ou 72h avant une échéance. Par notification et par mail.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🧠</div>
+      <h3>Assistant IA personnel</h3>
+      <p>Interrogez toute votre mémoire : "Qui me doit de l'argent ?", "Quelles promesses sont en retard ?"</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">❤️</div>
+      <h3>Carnet de santé</h3>
+      <p>Mesures, RDV médicaux, professionnels de santé. L'essentiel, pas plus.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📋</div>
+      <h3>Annuaire personnel</h3>
+      <p>Médecin, garagiste, coiffeur... Retrouvez un numéro en 5 secondes.</p>
+    </div>
+  </div>
+
+  <div class="security">
+    <h2>🔒 Vos données restent les vôtres</h2>
+    <div class="security-grid">
+      <div class="sec-item">
+        <span class="sec-icon">🔐</span>
+        <span class="sec-text">Chiffrement AES-256-GCM sur votre appareil</span>
+      </div>
+      <div class="sec-item">
+        <span class="sec-icon">📵</span>
+        <span class="sec-text">Zéro serveur — aucune donnée envoyée sans votre accord</span>
+      </div>
+      <div class="sec-item">
+        <span class="sec-icon">👆</span>
+        <span class="sec-text">Déverrouillage biométrique (empreinte, Face ID)</span>
+      </div>
+      <div class="sec-item">
+        <span class="sec-icon">🚫</span>
+        <span class="sec-text">Aucune publicité. Aucun tracking. Aucune analytics.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="links">
+    <a href="memovie-privacy.html">Politique de confidentialité</a>
+    <a href="mailto:contact@protefinance.fr">Contact</a>
+    <a href="index.html">← ProtéFinance</a>
+  </div>
+</main>
+<footer>
+  © 2026 ProtéFinance · MémoVie · Made in France 🇫🇷 · Tous droits réservés
+</footer>
+</body>
+</html>
