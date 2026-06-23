@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MémoVie — Mémoire augmentée du quotidien</title>
-<meta name="description" content="MémoVie — L'app Android qui mémorise tout pour vous. Notes, promesses, dettes, rappels, santé. Disponible sur Google Play.">
+<meta name="description" content="MémoVie — L'app Android qui mémorise tout pour vous. Notes, promesses, dettes, rappels, santé, famille. 100% local, chiffré AES-256. Disponible sur Google Play.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -21,8 +21,10 @@
          padding: 0.9rem 2rem; border-radius: 50px; font-weight: 600;
          font-size: 1.05rem; text-decoration: none; transition: opacity 0.2s; }
   .cta:hover { opacity: 0.9; }
-  .badge-protefinance { margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.7; }
+  .badge-dev { margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.7; }
   main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .section-title { font-size: 1.4rem; font-weight: 700; color: #1B3A6B;
+                   text-align: center; margin-bottom: 1.8rem; }
   .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
               gap: 1.2rem; margin-bottom: 3rem; }
   .feature { background: white; border-radius: 16px; padding: 1.5rem;
@@ -46,15 +48,21 @@
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo-big">MV</div>
   <h1>MémoVie</h1>
   <p>Votre mémoire augmentée du quotidien. Notez tout en 10 secondes. Ne plus jamais oublier.</p>
-  <a href="#" class="cta">📱 Bientôt sur Google Play</a>
-  <p class="badge-protefinance">by ProtéFinance 🇫🇷</p>
+  <a href="https://play.google.com/store/apps/details?id=fr.memovie.app" class="cta">
+    📱 Disponible sur Google Play
+  </a>
+  <p class="badge-dev">by ProtéFinance 🇫🇷 · Développé en France</p>
 </header>
 
 <main>
+
+  <p class="section-title">Tout ce dont vous avez besoin. Rien de superflu.</p>
+
   <div class="features">
     <div class="feature">
       <div class="feature-icon">🎤</div>
@@ -63,23 +71,38 @@
     </div>
     <div class="feature">
       <div class="feature-icon">🤝</div>
-      <h3>Promesses & dettes</h3>
+      <h3>Promesses &amp; dettes</h3>
       <p>Suivez vos engagements et l'argent prêté ou emprunté avec rappels automatiques.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">🔔</div>
       <h3>Rappels intelligents</h3>
-      <p>Notifications 24h, 48h ou 72h avant une échéance. Par notification et par mail.</p>
+      <p>Notifications 24h, 48h ou 72h avant une échéance. Briefing matin et récap du soir.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">🧠</div>
-      <h3>Assistant IA personnel</h3>
-      <p>Interrogez toute votre mémoire : "Qui me doit de l'argent ?", "Quelles promesses sont en retard ?"</p>
+      <h3>ELIO — Assistant IA personnel</h3>
+      <p>Interrogez votre mémoire : "Qui me doit de l'argent ?", "Quelles promesses sont en retard ?"</p>
     </div>
     <div class="feature">
       <div class="feature-icon">❤️</div>
       <h3>Carnet de santé</h3>
-      <p>Mesures, RDV médicaux, professionnels de santé. L'essentiel, pas plus.</p>
+      <p>Mesures, RDV médicaux, professionnels de santé. Exportable en PDF pour votre médecin.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📍</div>
+      <h3>Rappels géolocalisés</h3>
+      <p>Recevez un rappel automatiquement quand vous arrivez à un lieu (pharmacie, bureau, école).</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">👨‍👩‍👧</div>
+      <h3>Famille &amp; école</h3>
+      <p>Messagerie locale, devoirs, notes scolaires, calendrier des congés et RDV.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🛒</div>
+      <h3>Courses &amp; voyages</h3>
+      <p>Listes de courses intelligentes, carnet de voyages avec budget et préparation.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">📋</div>
@@ -115,7 +138,9 @@
     <a href="mailto:contact@protefinance.fr">Contact</a>
     <a href="index.html">← ProtéFinance</a>
   </div>
+
 </main>
+
 <footer>
   © 2026 ProtéFinance · MémoVie · Made in France 🇫🇷 · Tous droits réservés
 </footer>
