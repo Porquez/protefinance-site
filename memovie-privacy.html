@@ -26,13 +26,21 @@
            font-weight: 500; margin: 0.25rem 0.25rem 0 0; }
   .highlight { background: #fff8e1; border-left: 4px solid #F5A623;
                padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin: 1rem 0; }
+  .highlight-green { background: #e8f5e9; border-left: 4px solid #2e7d32;
+                     padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin: 1rem 0; }
   footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #8A9BB0; }
   .back { display: inline-block; margin-bottom: 1.5rem; color: #1B3A6B;
           text-decoration: none; font-weight: 500; }
   .back:hover { text-decoration: underline; }
+  a { color: #1B3A6B; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th { background: #1B3A6B; color: white; padding: 0.6rem 0.8rem; text-align: left; }
+  td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #E0E6EF; color: #3a4a5a; }
+  tr:nth-child(even) td { background: #f8f9fb; }
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo">
     <div class="logo-badge">MV</div>
@@ -43,26 +51,45 @@
   </div>
   <p>Politique de confidentialité — Dernière mise à jour : juin 2026</p>
 </header>
-<main>
-  <a href="index.html" class="back">← Retour au site ProtéFinance</a>
 
-  <h2>1. Qui sommes-nous ?</h2>
-  <p>MémoVie est une application Android développée par <strong>ProtéFinance</strong>, éditeur français de logiciels de gestion personnelle et professionnelle.</p>
+<main>
+  <a href="memovie.html" class="back">← Retour à MémoVie</a>
+
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>1. Qui développe MémoVie ?</h2>
+  <p>MémoVie est une application Android développée à titre <strong>personnel et indépendant</strong> par un développeur particulier, sous la marque <strong>ProtéFinance</strong>.</p>
   <p>Contact : <a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a></p>
 
-  <h2>2. Données collectées</h2>
-  <div class="highlight">
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>2. Principe fondamental</h2>
+  <div class="highlight-green">
     <strong>🔒 MémoVie ne collecte aucune donnée personnelle sur des serveurs externes.</strong><br>
     Toutes vos données restent sur votre appareil, chiffrées avec AES-256-GCM.
+    Aucune donnée n'est envoyée à des tiers sans votre accord explicite.
   </div>
-  <p>Les données suivantes sont stockées <strong>uniquement sur votre appareil</strong> :</p>
+
+  <p>Les données suivantes sont stockées <strong>uniquement en local sur votre appareil</strong> :</p>
   <ul>
-    <li>Vos notes, promesses, dettes, rappels et entrées de santé</li>
-    <li>Votre profil (pseudo, email, prénom, nom)</li>
+    <li>Vos notes, mémos, promesses, dettes et rappels</li>
+    <li>Votre profil personnel (pseudo, prénom, nom)</li>
     <li>Vos contacts de l'annuaire personnel</li>
-    <li>Vos préférences d'application (thème, notifications)</li>
+    <li>Vos préférences d'application (thème, horaires de notifications)</li>
+    <li>Vos listes de courses, congés, entrées scolaires et voyages</li>
+    <li>Vos documents et pièces jointes (GED)</li>
   </ul>
 
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>2b. Données de santé</h2>
+  <div class="highlight">
+    Les données de santé (mesures corporelles, rendez-vous médicaux, notes de santé)
+    sont saisies <strong>volontairement</strong> par l'utilisateur et stockées
+    <strong>uniquement sur votre appareil</strong>, chiffrées AES-256.
+    Elles ne sont jamais transmises, partagées ou analysées par ProtéFinance.<br><br>
+    <strong>MémoVie n'est pas un dispositif médical</strong> et ne remplace
+    pas un avis médical professionnel.
+  </div>
+
+  <!-- ──────────────────────────────────────────────────────────────────── -->
   <h2>3. Chiffrement et sécurité</h2>
   <p>Toutes les données sont chiffrées avec <span class="badge">AES-256-GCM</span> via le Keystore Android. La clé de chiffrement est dérivée de votre PIN personnel avec <span class="badge">PBKDF2</span> (100 000 itérations).</p>
   <p>L'accès à l'application est protégé par :</p>
@@ -71,49 +98,122 @@
     <li>Authentification biométrique (empreinte digitale, reconnaissance faciale)</li>
   </ul>
 
-  <h2>4. Intelligence Artificielle (optionnelle)</h2>
-  <p>Si vous choisissez d'activer les fonctions IA, votre clé API Anthropic est stockée localement sur votre appareil, chiffrée. Les requêtes IA sont envoyées directement à l'API Anthropic (<a href="https://www.anthropic.com" target="_blank">anthropic.com</a>).</p>
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>4. Intelligence artificielle (optionnelle)</h2>
+  <p>Si vous choisissez d'activer les fonctions IA (ELIO avancé), votre clé API Anthropic est stockée localement sur votre appareil, chiffrée. Les requêtes IA sont envoyées directement à l'API Anthropic (<a href="https://www.anthropic.com" target="_blank">anthropic.com</a>).</p>
   <p>Consultez la <a href="https://www.anthropic.com/privacy" target="_blank">politique de confidentialité d'Anthropic</a> pour les données traitées lors des appels API. L'activation de l'IA est entièrement optionnelle.</p>
 
-  <h2>5. Permissions Android</h2>
-  <ul>
-    <li><strong>Microphone</strong> : saisie vocale, uniquement à votre demande explicite</li>
-    <li><strong>Notifications</strong> : rappels programmés par vos soins</li>
-    <li><strong>Biométrie</strong> : déverrouillage sécurisé de l'application</li>
-    <li><strong>Stockage</strong> : export de vos données (.mvault)</li>
-  </ul>
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>4b. Messagerie famille (optionnelle)</h2>
+  <p>Si vous activez la messagerie famille, les messages sont synchronisés via <strong>Firebase Realtime Database</strong> (Google LLC), pour permettre l'échange entre membres du foyer. Cette fonctionnalité est entièrement optionnelle et peut être utilisée sans connexion (mode local uniquement).</p>
+  <p>Consultez la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a> pour les données traitées par Firebase.</p>
 
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>5. Permissions Android utilisées</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Permission</th>
+        <th>Utilisation</th>
+        <th>Obligatoire</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Microphone</strong></td>
+        <td>Saisie vocale, uniquement à votre demande explicite</td>
+        <td>Non</td>
+      </tr>
+      <tr>
+        <td><strong>Notifications</strong></td>
+        <td>Rappels d'échéances, briefing matin, récap du soir</td>
+        <td>Non</td>
+      </tr>
+      <tr>
+        <td><strong>Biométrie</strong></td>
+        <td>Déverrouillage sécurisé de l'application</td>
+        <td>Non</td>
+      </tr>
+      <tr>
+        <td><strong>Stockage / médias</strong></td>
+        <td>Import de documents et photos dans la GED</td>
+        <td>Non</td>
+      </tr>
+      <tr>
+        <td><strong>Appareil photo</strong></td>
+        <td>Scan de documents dans la GED, à votre demande</td>
+        <td>Non</td>
+      </tr>
+      <tr>
+        <td><strong>Localisation précise (GPS)</strong></td>
+        <td>Rappels géolocalisés : notification automatique quand vous arrivez à un lieu. Les coordonnées restent sur votre appareil.</td>
+        <td>Non</td>
+      </tr>
+      <tr>
+        <td><strong>Démarrage au boot</strong></td>
+        <td>Réactivation des rappels GPS et des notifications après redémarrage de l'appareil</td>
+        <td>Oui (si rappels GPS activés)</td>
+      </tr>
+      <tr>
+        <td><strong>Service de premier plan</strong></td>
+        <td>Exécution des rappels planifiés (briefing matin/soir) même en Doze mode Android 12+</td>
+        <td>Oui (notifications)</td>
+      </tr>
+      <tr>
+        <td><strong>Optimisation batterie</strong></td>
+        <td>Possibilité de demander l'exemption pour garantir l'exécution des rappels sans restriction</td>
+        <td>Non</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ──────────────────────────────────────────────────────────────────── -->
   <h2>6. Partage de données</h2>
-  <div class="highlight">
-    MémoVie <strong>ne partage aucune donnée</strong> avec des tiers.<br>
+  <div class="highlight-green">
+    MémoVie <strong>ne partage aucune donnée</strong> avec des tiers à des fins commerciales.<br>
     Aucune publicité. Aucun tracking. Aucune analytics.
   </div>
+  <p>Les seuls envois de données vers l'extérieur, toujours optionnels et à votre initiative :</p>
+  <ul>
+    <li><strong>API Anthropic</strong> : uniquement si vous activez l'IA et saisissez une clé API</li>
+    <li><strong>Firebase</strong> : uniquement si vous activez la messagerie famille</li>
+    <li><strong>Google Drive</strong> : uniquement si vous activez la sauvegarde cloud</li>
+  </ul>
 
+  <!-- ──────────────────────────────────────────────────────────────────── -->
   <h2>7. Suppression de vos données</h2>
   <p>Vous pouvez supprimer toutes vos données à tout moment :</p>
   <ul>
     <li><strong>Dans l'app</strong> : Réglages → Données → Supprimer toutes les données</li>
-    <li><strong>Désinstallation</strong> : la désinstallation de l'application supprime toutes les données locales</li>
+    <li><strong>Désinstallation</strong> : supprime toutes les données locales automatiquement</li>
   </ul>
 
-  <h2>8. Droits RGPD</h2>
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>8. Vos droits (RGPD)</h2>
   <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
   <ul>
-    <li>Droit d'accès à vos données (export .mvault dans Réglages)</li>
-    <li>Droit de rectification (modification directe dans l'app)</li>
-    <li>Droit à l'effacement (suppression dans Réglages)</li>
-    <li>Droit à la portabilité (export .mvault chiffré)</li>
+    <li><strong>Accès</strong> : export de vos données (Réglages → Exporter)</li>
+    <li><strong>Rectification</strong> : modification directe dans l'application</li>
+    <li><strong>Effacement</strong> : suppression dans Réglages → Données</li>
+    <li><strong>Portabilité</strong> : export chiffré au format .mvault</li>
   </ul>
-  <p>Pour exercer ces droits : <a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a></p>
+  <p>Pour exercer ces droits ou pour toute question : <a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a></p>
 
-  <h2>9. Modifications</h2>
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+  <h2>9. Modifications de cette politique</h2>
   <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée en haut de cette page. Les modifications importantes seront notifiées dans l'application.</p>
 
+  <!-- ──────────────────────────────────────────────────────────────────── -->
   <h2>10. Contact</h2>
-  <p><strong>ProtéFinance</strong><br>
-  Email : <a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a><br>
-  Site : <a href="https://porquez.github.io/protefinance-site/">porquez.github.io/protefinance-site</a></p>
+  <p>
+    <strong>ProtéFinance</strong> — développeur indépendant<br>
+    Email : <a href="mailto:contact@protefinance.fr">contact@protefinance.fr</a><br>
+    Site : <a href="https://porquez.github.io/protefinance-site/memovie.html">porquez.github.io/protefinance-site/memovie.html</a>
+  </p>
+
 </main>
+
 <footer>
   © 2026 ProtéFinance · MémoVie · Made in France 🇫🇷 · Tous droits réservés
 </footer>
